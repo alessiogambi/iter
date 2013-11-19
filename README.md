@@ -144,17 +144,17 @@ After cloning the repo, assuming the availability of the configuration file and 
 the default configuration of the tool can be run by issuing the following command:
 ```bash
 mvn  
-	-Dlog4j.configuration=file://<PATH-TO-REPO>/conf/log4j.properties \  
-	-Dat.ac.tuwien.dsg.cloud.configuration=<PATH-TO-REPO>/conf/cloud.properties \  
+	-Dlog4j.configuration=file://<PATH-TO-ITER>/conf/log4j.properties \  
+	-Dat.ac.tuwien.dsg.cloud.configuration=<PATH-TO-ITER>/conf/cloud.properties \  
  	exec:java \  
 	-Dexec.args="--output-file output.xml -c <CNAME> -s <SNAME> -m <SERVICE-MANIFEST-URL> -j <JMETER-CLIENTS-URL>"  
 ```
 
-<PATH-TO-REPO> points to where the git repo was cloned to;  
-<CNAME> is a 3-char long id of the client;
-<SNAME> is a 3-char long id of the service (SUT);  
-<SERVICE-MANIFEST-URL> is a valid URL that points at the service manifest file;  
-<JMETER-CLIENTS-URL> is a valid URL that points at the user sessions JMeter file.
+**PATH-TO-ITER** points to where the git repo was cloned to;  
+**CNAME** is a 3-char long id of the client;
+**SNAME** is a 3-char long id of the service (SUT);  
+**SERVICE-MANIFEST-URL** is a valid URL that points at the service manifest file;  
+**JMETER-CLIENTS-URL** is a valid URL that points at the user sessions JMeter file.
 
 # References
 
