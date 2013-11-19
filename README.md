@@ -4,15 +4,15 @@ ITER
 An extensible tool for search-based system testing of Cloud applications.
   
 This tool implements an evolutionary process that is specifically designed to incrementally build test suites for system testing of applications that run in clouds under the *Infrastructure-as-a-Service (IaaS)* paradigm.
-ITER leverages a powerful test driver, called AUToCLES[1], that automates the deployment of cloud-based applications that are formally specified through a *service manifest* file, the generation of the workload that is specified by an Apache JMeter[2] *test plan*, and the collection of the data inside a private *memcached* service.
+ITER leverages a powerful test driver, called [AUToCLES][1], that automates the deployment of cloud-based applications that are formally specified through a *service manifest* file, the generation of the workload that is specified by an [Apache JMeter][2] *test plan*, and the collection of the data inside a private *memcached* service.
 AUToCLES exposes a Web user interface and a REST API that ITER binds to schedule test executions and to retrieve published test execution data.
 
 The theory underlying ITER is described in some research papers (see the References Section at the end of this file) and is briefly summarized in the next Section.
 
-The architecture of the tool, its main features, the intended users and the available extensions are described in a paper submitted to the Formal Demo track of the International Conference on Software Engineering (ICSE'14)[3]. The next sections summarize these aspects, and we remand to the code for a detailed understanding of the tool's implementation.
+The architecture of the tool, its main features, the intended users and the available extensions are described in a paper submitted to the Formal Demo track of the [International Conference on Software Engineering (ICSE'14)][3]. The next sections summarize these aspects, and we remand to the code for a detailed understanding of the tool's implementation.
 
 A short video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE " target="_blank">on YouTube</a>.
-The demo shows the tool main features, and uses the implementation of the iterative test suite refinement methods proposed in [13].
+The demo shows the tool main features, and uses the implementation of the iterative test suite refinement methods proposed in [13][13].
 Another goal of the demo is to show how the tool can be easily extended by providing new (or customized) implementations of the different key elements that comprise its architecture.
 
 # Some Theory
@@ -39,7 +39,7 @@ In this way, we generate easily different test cases that target the very same d
 Imagine that we need to test an elastic n-tier Web application that for example implement and auction site.
 The application is composed of various components that are run by different virtual machines. For example, the load balancer and the monitoring component run in a medium instance, the web server and the application server in a small instance and the database in a large instance. Web and application servers can dynamically added and removed. An additional small instance runs the control logic that decides when to add and remove the instances of these machines. All these information (and something more) are stored inside the service manifest (1). An example of such file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml).
 
-To stress the application we define two types of user sessions, namely *buyers* and *sellers*, that defined (possibly randomized) sequences of users request. For example, `login`, `search product`, `bid`, `buy`, and so on. The logic of user sessions is captured inside a JMeter test plan, a widely known workload generator (2). An example of such file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx), and it can be open with the JMeter tool (with GUI) after installing the extensions available [here](http://jmeter-plugins.org/wiki/StandardSet/).
+To stress the application we define two types of user sessions, namely *buyers* and *sellers*, that defined (possibly randomized) sequences of users request. For example, `login`, `search product`, `bid`, `buy`, and so on. The logic of user sessions is captured inside a JMeter test plan, a widely known workload generator (2). An example of such file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx), and it can be open with the JMeter tool (version 2.9 with GUI) after installing the extensions available [here](http://jmeter-plugins.org/wiki/StandardSet/).
 
 We decide to mimic periodic trends for both the types of user sessions, so we model the amount of concurrent active users by two sine functions.
 For example, we define that the amount of buyer sessions behaves according to a sine wave that passes from 0 to 100 users over a period of 30 mins, starting from 0. Similarly we define that seller sessions start from 10 and go up to 50 over a period of 1 hour. These workload are encoded in simple trace files that are obtained by evaluating the wave functions in each second (3). An example of such trace file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-trace.csv).
@@ -52,7 +52,7 @@ This tool targets all the persons that should/must/would evaluate the quality of
 
 # Usage Scenarios
 
-## Main Scenario: Test case generation
+## Test case generation (Main Scenario)
 
 The main scenario is the one of incremental generation of test suite. A tester prepares the service manifest, user sessions definition and the assertions, and she configures the initial test case generation and evolution policy. Then the tool is started with additional configurations that define for example the space of the search, the amount of parallelism for executing the tests and test report file that must be produced. The tool starts by creating and executing some initial (random) tests, then evolves the test suite, and it runs until it completed the search or an exception is generated. During the run, partial results and executed test cases are stored in the test report file. At the end of the run, the test report contains the test suites and all the data about the test cases ran.
 
@@ -107,47 +107,48 @@ The complete list of dependency can be easily retrieved by inspecting the [*pom.
 # Code and Releases Download
 
 The code can be downloaded by forking this git repository, while the jar files can be downloaded with maven by adding the following dependency and repository entries inside your pom.xml file:
-``xml
-<dependency>
-	<groupId>at.ac.tuwien</groupId>
-	<artifactId>iter</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+```xml
+<dependency>  
+	<groupId>at.ac.tuwien</groupId>  
+	<artifactId>iter</artifactId>  
+	<version>0.0.1-SNAPSHOT</version>  
 </dependency>
-``
+```
 
-``xml
-<repository>
-	<name>Infosys Repo</name>
-	<id>infosys-repo</id>
-	<url>http://www.infosys.tuwien.ac.at/mvn</url>
+```xml
+<repository>  
+	<name>Infosys Repo</name>  
+	<id>infosys-repo</id>  
+	<url>http://www.infosys.tuwien.ac.at/mvn</url>  
 </repository>
-``
+```
 
-``xml
-<repository>
-	<id>matloacontrol</id>
-	<url>http://maven.inria.fr/artifactory/plasmalab-public-release</url>
+```xml
+<repository>  
+	<id>matloacontrol</id>  
+	<url>http://maven.inria.fr/artifactory/plasmalab-public-release</url>  
 </repository>
-``
+```
 
 # Configurations
 
-ITER can be configured by defining several configurations inside a specific `.properties` file.
-[../conf/cloud.properties] lists some examples.
+ITER can be configured by defining several configurations inside a specific `cloud.properties` file.
+[This file](./conf/cloud.properties) lists an example of the configuration file.
 
 # Run the tool
 
 **NOTE** to run the tool you need a running AUToCLES instance which can be problematic to build from scratch. For this reasons, we are developing (and maintaining) a virtual machine (Ubuntu, qcow2, and configured to run by OpenStack clouds) that contains all the required software and is ready to run.
-That virtual machine is available only upon request to [Alessio Gambi][http://www.infosys.tuwien.ac.at/staff/agambi/blog/?page_id=2#contactform].
+That virtual machine is available only upon request to [Alessio Gambi](http://www.infosys.tuwien.ac.at/staff/agambi/blog/?page_id=2#contactform).
 
 After cloning the repo, assuming the availability of the configuration file and AUToCLES, 
 the default configuration of the tool can be run by issuing the following command:
-``bash
-mvn
-	-Dlog4j.configuration=file://<PATH-TO-REPO>/conf/log4j.properties \
-	-Dat.ac.tuwien.dsg.cloud.configuration=<PATH-TO-REPO>/conf/cloud.properties \
- 	exec:java \
-	-Dexec.args="--output-file output.xml -c <CNAME> -s <SNAME> -m <SERVICE-MANIFEST-URL> -j <JMETER-CLIENTS-URL>"
+```bash
+mvn  
+	-Dlog4j.configuration=file://<PATH-TO-REPO>/conf/log4j.properties \  
+	-Dat.ac.tuwien.dsg.cloud.configuration=<PATH-TO-REPO>/conf/cloud.properties \  
+ 	exec:java \  
+	-Dexec.args="--output-file output.xml -c <CNAME> -s <SNAME> -m <SERVICE-MANIFEST-URL> -j <JMETER-CLIENTS-URL>"  
+```
 
 <PATH-TO-REPO> points to where the git repo was cloned to;  
 <CNAME> is a 3-char long id of the client;
