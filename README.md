@@ -37,12 +37,12 @@ In this way, we generate easily different test cases that target the very same d
 ## A Simple Example
 
 Imagine that we need to test an elastic n-tier Web application that for example implement and auction site.
-The application is composed of various components that are run by different virtual machines. For example, the load balancer and the monitoring component run in a medium instance, the web server and the application server in a small instance and the database in a large instance. Web and application servers can dynamically added and removed. An additional small instance runs the control logic that decides when to add and remove the instances of these machines. All these information (and something more) are stored inside the service manifest (1). An example of such file can be downloaded from [here][http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml].
+The application is composed of various components that are run by different virtual machines. For example, the load balancer and the monitoring component run in a medium instance, the web server and the application server in a small instance and the database in a large instance. Web and application servers can dynamically added and removed. An additional small instance runs the control logic that decides when to add and remove the instances of these machines. All these information (and something more) are stored inside the service manifest (1). An example of such file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml).
 
-To stress the application we define two types of user sessions, namely *buyers* and *sellers*, that defined (possibly randomized) sequences of users request. For example, `login`, `search product`, `bid`, `buy`, and so on. The logic of user sessions is captured inside a JMeter test plan, a widely known workload generator (2). An example of such file can be downloaded from [here][http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx], and it can be open with the JMeter tool (with GUI) after installing the extensions available [here][http://jmeter-plugins.org/wiki/StandardSet/].
+To stress the application we define two types of user sessions, namely *buyers* and *sellers*, that defined (possibly randomized) sequences of users request. For example, `login`, `search product`, `bid`, `buy`, and so on. The logic of user sessions is captured inside a JMeter test plan, a widely known workload generator (2). An example of such file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx), and it can be open with the JMeter tool (with GUI) after installing the extensions available [here](http://jmeter-plugins.org/wiki/StandardSet/).
 
 We decide to mimic periodic trends for both the types of user sessions, so we model the amount of concurrent active users by two sine functions.
-For example, we define that the amount of buyer sessions behaves according to a sine wave that passes from 0 to 100 users over a period of 30 mins, starting from 0. Similarly we define that seller sessions start from 10 and go up to 50 over a period of 1 hour. These workload are encoded in simple trace files that are obtained by evaluating the wave functions in each second (3). An example of such trace file can be downloaded from [here][http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-trace.csv].
+For example, we define that the amount of buyer sessions behaves according to a sine wave that passes from 0 to 100 users over a period of 30 mins, starting from 0. Similarly we define that seller sessions start from 10 and go up to 50 over a period of 1 hour. These workload are encoded in simple trace files that are obtained by evaluating the wave functions in each second (3). An example of such trace file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-trace.csv).
 
 Finally, we define two assertions the first is one the number of web/applications servers that must never become smaller than one, and the second is about the average response time of the user requests that should never exceed 2 seconds. Assuming the availability of these data we encode the assertion logic inside Java code (4). Available assertions can be found in the `at.ac.tuwien.iter.services.impl.assertions` package.
 
@@ -80,7 +80,7 @@ The most important are listed and briefly described below.
 - **Bootstrap** ITER can be bootstrapped with previously collected test executions. At the moment this is implemented by feeding the tool with a test report file in the XML format.  
 
 - **Generation of the initial test suite**. Usually search algorithms are started by randomly selecting individuals.
-ITER can be used to generate (pseudo)randomly an initial set of test inputs.
+ITER can be used to generate (pseudo-)randomly an initial set of test inputs.
 Users can decide on the amount of individuals to generate and the strategy to generate them.
 At the moment the are two implementations of this feature:
 	- Random. The test set is generated randomly;  
@@ -96,13 +96,13 @@ At the moment the are two implementations of this feature:
 
 - **Evolutionary Policy**. ITER implements a generic evolutionary loop but the evolution logic, that is, the logic that evolves the test suites and decides when to stop the search. At the moment we have implemented two policies:
 	- Stop. This is the simplest possible policy: it stops the search as soon as it is invoked.
-	- Plasticity Search. This search creates new tests that maximize the probability of finding plasticity in the system starting from the data collected in the previous test executions (For more details see [13]).
+	- Plasticity Search. This search creates new tests that maximize the probability of finding plasticity in the system starting from the data collected in the previous test executions (for more details see [13]).
 
 # Implementation Details
 
-ITER is implemented in Java and leverages several libraries; to mention few: [**tapestry-ioc**][http://tapestry.apache.org/ioc.html], a powerful framework for dependency injection and inversion of control by Apache, [**tapestry5-cli**][https://github.com/alessiogambi/tapestry5-cli], a library to manage user inputs provided on the command line, and [**matlabcontrol**][https://code.google.com/p/matlabcontrol/], a library to interface Java with Matlab that is required by the plasticity search.
+ITER is implemented in Java and leverages several libraries; to mention few: [**tapestry-ioc**](http://tapestry.apache.org/ioc.html), a powerful framework for dependency injection and inversion of control by Apache, [**tapestry5-cli**](https://github.com/alessiogambi/tapestry5-cli), a library to manage user inputs provided on the command line, and [**matlabcontrol**](https://code.google.com/p/matlabcontrol/), a library to interface Java with Matlab that is required by the plasticity search.
 
-The complete list of dependency can be easily retrieved by inspecting the [*pom.xml*][] file in the repository.
+The complete list of dependency can be easily retrieved by inspecting the [*pom.xml*](./pom.xml) file in the repository.
 
 # Code and Releases Download
 
