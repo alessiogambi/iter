@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>at.ac.tuwien</groupId>
+	<artifactId>iter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>ITERative Test Suite Refinement for Cloud-based Applications
+	</name>
+	<url>https://github.com/alessiogambi/iter</url>
+
+	<inceptionYear>2013</inceptionYear>
+
+	<developers>
+		<developer>
+			<name>Alessio Gambi</name>
+			<email>alessio.gambi@usi.ch</email>
+			<url>http://www.inf.usi.ch/phd/gambi/</url>
+		</developer>
+		<developer>
+			<name>Antonio Filieri</name>
+			<email>antonio.filieri@informatik.uni-stuttgart.de</email>
+		</developer>
+	</developers>
+
+	<distributionManagement>
+		<repository>
+			<id>infosys-repo</id>
+			<name>infosys-repo</name>
+			<uniqueVersion>false</uniqueVersion>
+			<url>scp://128.131.172.98/web/website/mvn</url>
+		</repository>
+		<snapshotRepository>
+			<id>infosys-repo</id>
+			<name>infosys-repo</name>
+			<url>scp://128.131.172.98/web/website/mvn</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
+
+	<dependencies>
+		<!-- CLI Parsing and Validation -->
+		<dependency>
+			<groupId>org.gambi</groupId>
+			<artifactId>tapestry5-cli</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
+
+		<!-- Service Manifest Parsing -->
+		<dependency>
+			<groupId>ch.usi.cloud</groupId>
+			<artifactId>cloud-driver</artifactId>
+			<version>0.1.2-SNAPSHOT</version>
+		</dependency>
+
+		<!-- Trace Generator -->
+		<dependency>
+			<groupId>at.ac.tuwien</groupId>
+			<artifactId>tracegenerator</artifactId>
+			<version>0.1-SNAPSHOT</version>
+		</dependency>
+
+
+		<!-- We must exclude the dep here as it is not compatible with the rest 
+			of the deps. TODO Check that this is not a problem ! -->
+		<dependency>
+			<groupId>com.googlecode.sli4j</groupId>
+			<artifactId>sli4j-slf4j</artifactId>
+			<version>2.0</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>slf4j-api</artifactId>
+					<groupId>org.slf4j</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Trace execution with basic runner -->
+		<!-- Bindings for AUToCLES -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>13.0.1</version>
+		</dependency>
+
+		<!-- Interface to Matlab -->
+		<dependency>
+			<groupId>matlabcontrol</groupId>
+			<artifactId>matlabcontrol</artifactId>
+			<version>4.1.0</version>
+		</dependency>
+
+		<!-- Dependency Injection and IoC -->
+		<dependency>
+			<groupId>org.apache.tapestry</groupId>
+			<artifactId>tapestry-ioc</artifactId>
+			<version>5.3.7</version>
+		</dependency>
+
+		<!-- Data Persistency -->
+		<dependency>
+			<groupId>hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>1.8.0.10</version>
+		</dependency>
+
+		<!-- JUnit -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<repositories>
+		<repository>
+			<name>Infosys Repo</name>
+			<id>infosys-repo</id>
+			<url>http://www.infosys.tuwien.ac.at/mvn</url>
+		</repository>
+		<repository>
+			<id>matloacontrol</id>
+			<url>http://maven.inria.fr/artifactory/plasmalab-public-release</url>
+		</repository>
+	</repositories>
+
+	<!-- <pluginRepositories> <pluginRepository> <id>anydoby.com</id> <url>http://anydoby.com/maven</url> 
+		</pluginRepository> </pluginRepositories> -->
+
+	<description>This tool implements a generic iterative process to create
+		and refine test suites for system-testing of cloud-based applications.
+	</description>
+
+
+	<build>
+		<!-- Use ssh to deploy on infosys maven repository -->
+		<extensions>
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-ssh</artifactId>
+				<version>1.0-beta-6</version>
+			</extension>
+		</extensions>
+
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>2.3.2</version>
+				<configuration>
+					<source>1.5</source>
+					<target>1.5</target>
+				</configuration>
+			</plugin>
+
+			<!-- Execute the Main class with mvn exec:java. This is ok for the moment 
+				because we are developing the tool later this will be removed -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>java</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<mainClass>at.ac.tuwien.iter.Iter</mainClass>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
