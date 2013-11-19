@@ -176,6 +176,6 @@ In Proceedings of the joint meeting of the European Software Engineering Confere
 In Proceedings of the International Workshop on Combining Modelling and Search-Based Software Engineering (CMSBSE) (co-located with ICSE'13),
 May 20, 2013, San Francisco, California, USA  
 
-[1] http://dsg.tuwien.ac.at/autocles/
-[2] http://jmeter.apache.org/
-[3] http://2014.icse-conferences.org/demo
+[1]: http://dsg.tuwien.ac.at/autocles/
+[2]: http://jmeter.apache.org/
+[3]: http://2014.icse-conferences.org/demo
