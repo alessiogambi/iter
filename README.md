@@ -12,8 +12,10 @@ The theory underlying ITER is described in some research papers (see the Referen
 The architecture of the tool, its main features, the intended users and the available extensions are described in a paper submitted to the Formal Demo track of the International Conference on Software Engineering (ICSE'14)[3]. The next sections summarize these aspects, and we remand to the code for a detailed understanding of the tool's implementation.
 
 A short video showcase how the tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE " target="_blank">on YouTube</a>.
+The demo shows the tool main features, and uses the implementation of the iterative test suite refinement methods proposed in [13].
+One of the main goal of the demo is to show how *easily* the tool can be extended, by providing new (or tailored) implementations of the different key elements that comprise its architecture.
 
-# Summary of the Main Theoretical Aspects
+# Some Theory
 
 System-testing is a wide topic, and it can be implemented in a multitude of ways.
 We decided to adopt an automatic and iterative approach to generate and execute test cases.
@@ -61,52 +63,114 @@ ITER allows search to be bootstrapped by providing a test report as input. When 
 
 ## Dry Run
 
-ITER's default search policy is to stop without making any evolutionary step. This can be used in combination with the bootstrap when new user assertions are defined. In this case, the new assertions can be evaluated against an input dataset to produce an updated test report without the need of re-executing the tests.
+ITER's default search policy is to stop without making any evolutionary step. This can be used in combination with the bootstrap when new assertions are defined. In this case, the new assertions can be evaluated against an input dataset to produce an updated test report without the need of re-executing the tests.
 
 ## Regression
 
-ITER can be configured also to run an input set of tests. By feeding the tool with the previously executed tests, it indeed implements a for of regression test.
+ITER can be configured also to run an input set of tests.
+By feeding the tool with the previously executed tests, it indeed implements a for of regression test.  
+
 **Note:** Some of the features that are required to  implement this scenario are currently under-development.
 
 # Tool Features
 
-The most important features of the tool are listed and briefly described below.
+At the moment ITER offers several interesting features, and many more will come in the next future.
+The most important are listed and briefly described below. 
 
-- Bootstrap  
-- Generation of the 
-- Parallel Test Execution  
-- Data Collection  
-- Assertion framework  
-- Test Report Generation  
-- Evolutionary Policy
-	Available:
-	- Pure Random
-	- Plasticity Driven Search
-	
-# Tool Architecture
+- **Bootstrap** ITER can be bootstrapped with previously collected test executions. At the moment this is implemented by feeding the tool with a test report file in the XML format.  
 
-# Other Implementation Details
+- **Generation of the initial test suite**. Usually search algorithms are started by randomly selecting individuals.
+ITER can be used to generate (pseudo)randomly an initial set of test inputs.
+Users can decide on the amount of individuals to generate and the strategy to generate them.
+At the moment the are two implementations of this feature:
+	- Random. The test set is generated randomly;  
+	- LHS. The test set is generate by sampling the input space using the Latin Hypercube Sampling.  
 
-# Code Download
+- **Parallel Test Execution**. ITER enables testers to run in parallel (according to the users will) a variable number of test executions. In doing so, ITER assumes that users have enough spare capacity in the cloud to run correctly their tests. At the moment, test executions is implemented by AUToCLES, and ITER providers the bindings to its APIs. 
 
-Maven dependency form the Infosys repository
+- **Data Collection**. ITER collects test execution data that are published after each test execution, and stores them locally. At the moment, we have provided several test data collectors that binds to the AUToCLES tool.
+
+- **Assertion framework**. Users extend the framework by defining new assertions to check over the test execution data. ITER is designed to enable an easy access to the available data, and to store the result of each assertion inside the test report.
+
+- **Test Report Generation**.
+
+- **Evolutionary Policy**. ITER implements a generic evolutionary loop but the evolution logic, that is, the logic that evolves the test suites and decides when to stop the search. At the moment we have implemented two policies:
+	- Stop. This is the simplest possible policy: it stops the search as soon as it is invoked.
+	- Plasticity Search. This search creates new tests that maximize the probability of finding plasticity in the system starting from the data collected in the previous test executions (For more details see [13]).
+
+# Implementation Details
+
+ITER is implemented in Java and leverages several libraries; to mention few: **tapestry-ioc**, a powerful framework for dependency injection and inversion of control by Apache, **tapestry5-cli**, a library to manage user inputs provided on the command line, and **matlabcontrol**, a library to interface Java with Matlab that is required by the plasticity search.
+
+The complete list of dependency can be easily retrieved by inspecting the [*pom.xml*][] file in the repository.
+
+# Code and Releases Download
+
+The code can be downloaded by forking this git repository, while the jar files can be downloaded with maven by adding the following dependency and repository entries inside your pom.xml file:
+``xml
+<dependency>
+	<groupId>at.ac.tuwien</groupId>
+	<artifactId>iter</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+</dependency>
+``
+
+``xml
+<repository>
+	<name>Infosys Repo</name>
+	<id>infosys-repo</id>
+	<url>http://www.infosys.tuwien.ac.at/mvn</url>
+</repository>
+``
+
+``xml
+<repository>
+	<id>matloacontrol</id>
+	<url>http://maven.inria.fr/artifactory/plasmalab-public-release</url>
+</repository>
+``
+
+# Configurations
+
+ITER can be configured by defining several configurations inside a specific `.properties` file.
+[../conf/cloud.properties] lists some examples.
+
+# Run the tool
+
+**NOTE** to run the tool you need a running AUToCLES instance which can be problematic to build from scratch. For this reasons, we are developing (and maintaining) a virtual machine (Ubuntu, qcow2, and configured to run by OpenStack clouds) that contains all the required software and is ready to run.
+That virtual machine is available only upon request to [Alessio Gambi][http://www.infosys.tuwien.ac.at/staff/agambi/blog/?page_id=2#contactform].
+
+After cloning the repo, assuming the availability of the configuration file and AUToCLES, 
+the default configuration of the tool can be run by issuing the following command:
+``bash
+mvn
+	-Dlog4j.configuration=file://<PATH-TO-REPO>/conf/log4j.properties \
+	-Dat.ac.tuwien.dsg.cloud.configuration=<PATH-TO-REPO>/conf/cloud.properties \
+ 	exec:java \
+	-Dexec.args="--output-file output.xml -c <CNAME> -s <SNAME> -m <SERVICE-MANIFEST-URL> -j <JMETER-CLIENTS-URL>"
+
+<PATH-TO-REPO> points to where the git repo was cloned to;  
+<CNAME> is a 3-char long id of the client;
+<SNAME> is a 3-char long id of the service (SUT);  
+<SERVICE-MANIFEST-URL> is a valid URL that points at the service manifest file;  
+<JMETER-CLIENTS-URL> is a valid URL that points at the user sessions JMeter file.
 
 # References
 
-A. Gambi, W. Hummer, H.L. Truong, and S. Dustdar.
+[11] A. Gambi, W. Hummer, H.L. Truong, and S. Dustdar.
 *Testing Elastic Computing Systems*.
 Submitted to IEEE Internet Computing, 2013
 
-A. Gambi, W. Hummer, and S. Dustdar.
+[12] A. Gambi, W. Hummer, and S. Dustdar.
 *Automated Testing of Cloud-Based Elastic Systems with AUToCLES*.
 In Proceedings of the 28th IEEE/ACM International Conference on Automated Software Engineering (ASE),
 November 11-15, 2013, Palo Alto, California (USA)
 
-A. Gambi, A. Filieri, and S. Dustdar.
+[13] A. Gambi, A. Filieri, and S. Dustdar.
 *Iterative Test Suites Refinement for Elastic Computing Systems*.
 In Proceedings of the joint meeting of the European Software Engineering Conference and the ACM SIGSOFT Symposium on the Foundations of Software Engineering (ESEC/FSE), August 18-26, 2013, Saint Petersburg, Russia
 
-A. Gambi, W. Hummer, and S. Dustdar.
+[14] A. Gambi, W. Hummer, and S. Dustdar.
 *Testing Elastic Systems with Surrogate Models*.
 In Proceedings of the International Workshop on Combining Modelling and Search-Based Software Engineering (CMSBSE) (co-located with ICSE'13),
 May 20, 2013, San Francisco, California, USA  
