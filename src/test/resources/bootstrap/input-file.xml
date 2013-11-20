@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testResultsCollector>
+	<testResult>
+		<testId>1072924662</testId>
+		<customerName>ale</customerName>
+		<serviceName>ale</serviceName>
+		<loadGeneratorID>LHSConstantLoadGenerator</loadGeneratorID>
+		<traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,constant,17.0;
+		</traceURL>
+		<recordedAt>1380184110334</recordedAt>
+		<states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0
+			2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0
+			1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+			1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0
+			1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+		<parameters>17.0</parameters>
+		<controllerDB>jdbc:hsqldb:file:src/test/resources/bootstrap/1072924662-controller
+		</controllerDB>
+		<serviceDB>jdbc:hsqldb:file:src/test/resources/bootstrap/1072924662-service
+		</serviceDB>
+		<clientsDB>src/test/resources/bootstrap/1072924662-clients</clientsDB>
+		<testReports>
+			<testReport>
+				<testedProperty>plasticity</testedProperty>
+				<testOutcome>PASSED</testOutcome>
+			</testReport>
+			<testReport>
+				<testedProperty>inelasticity</testedProperty>
+				<testOutcome>PASSED</testOutcome>
+			</testReport>
+			<testReport>
+				<testedProperty>no-failed-request</testedProperty>
+				<testOutcome>FAILED</testOutcome>
+				<reason>423 requests failed. Max is 0</reason>
+			</testReport>
+			<testReport>
+				<testedProperty>absolute-failed-requests-10</testedProperty>
+				<testOutcome>FAILED</testOutcome>
+				<reason>423 requests failed. Max is 10</reason>
+			</testReport>
+			<testReport>
+				<testedProperty>relative-failed-requests-1.0%</testedProperty>
+				<testOutcome>FAILED</testOutcome>
+				<reason>13.28% of requests failed. Max is 1.00%</reason>
+			</testReport>
+			<testReport>
+				<testedProperty>relative-failed-requests-5.0%</testedProperty>
+				<testOutcome>FAILED</testOutcome>
+				<reason>13.28% of requests failed. Max is 5.00%</reason>
+			</testReport>
+			<testReport>
+				<testedProperty>relative-failed-requests-10.0%</testedProperty>
+				<testOutcome>FAILED</testOutcome>
+				<reason>13.28% of requests failed. Max is 10.00%</reason>
+			</testReport>
+			<testReport>
+				<testedProperty>avg-response-time</testedProperty>
+				<testOutcome>FAILED</testOutcome>
+				<reason>The number of failed requests 2 is greater than 0</reason>
+			</testReport>
+		</testReports>
+	</testResult>
+</testResultsCollector>

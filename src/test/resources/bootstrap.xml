@@ -1,0 +1,958 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testResultsCollector>
+    <testResult>
+        <testId>-1223987203</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,23.0,0.005,23.0,0.0;</traceURL>
+        <recordedAt>1378561046505</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>23.0 0.005</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>387022401</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,23.0,0.001,23.0,0.0;</traceURL>
+        <recordedAt>1378561106403</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>23.0 0.001</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1609456327</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,34.0,0.001,34.0,0.0;</traceURL>
+        <recordedAt>1378561106409</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>34.0 0.001</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1890362713</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,29.0,0.005,29.0,0.0;</traceURL>
+        <recordedAt>1378562067510</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>29.0 0.005</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1875041089</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,25.0,0.006,25.0,0.0;</traceURL>
+        <recordedAt>1378562067529</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>25.0 0.006</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>105063233</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,23.0,0.008,23.0,0.0;</traceURL>
+        <recordedAt>1378562127633</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>23.0 0.008</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1015860244</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,40.0,0.008,40.0,0.0;</traceURL>
+        <recordedAt>1378563148596</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>40.0 0.008</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>471650343</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,24.0,0.009,24.0,0.0;</traceURL>
+        <recordedAt>1378563148608</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>24.0 0.009</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1078012222</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,25.0,0.0,25.0,0.0;</traceURL>
+        <recordedAt>1378563148645</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>25.0 0.0</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-296031738</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,27.0,0.007,27.0,0.0;</traceURL>
+        <recordedAt>1378564109590</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>27.0 0.007</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1320531479</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,12.0,0.0,12.0,0.0;</traceURL>
+        <recordedAt>1378564109592</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>12.0 0.0</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1102214701</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,47.0,0.008,47.0,0.0;</traceURL>
+        <recordedAt>1378564169569</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>47.0 0.008</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1417416486</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,48.0,0.002,48.0,0.0;</traceURL>
+        <recordedAt>1378569991368</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>48.0 0.002</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1142667714</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,46.0,0.001,46.0,0.0;</traceURL>
+        <recordedAt>1378569991396</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>46.0 0.001</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>946188466</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,29.0,0.007,29.0,0.0;</traceURL>
+        <recordedAt>1378569991410</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>29.0 0.007</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1234417165</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,45.0,0.007,45.0,0.0;</traceURL>
+        <recordedAt>1378570952359</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>45.0 0.007</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>795022681</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,10.0,0.005,10.0,0.0;</traceURL>
+        <recordedAt>1378571012511</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>10.0 0.005</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-658887881</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,49.0,0.007,49.0,0.0;</traceURL>
+        <recordedAt>1378571012513</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>49.0 0.007</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1797824116</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,32.0,0.002,32.0,0.0;</traceURL>
+        <recordedAt>1378571973375</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>32.0 0.002</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1691729859</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,37.0,0.004,37.0,0.0;</traceURL>
+        <recordedAt>1378572033325</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>37.0 0.004</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>307450803</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,32.0,0.007,32.0,0.0;</traceURL>
+        <recordedAt>1378572033439</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>32.0 0.007</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>839391943</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,20.0,0.005,20.0,0.0;</traceURL>
+        <recordedAt>1378572994336</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>20.0 0.005</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1582022433</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,14.0,0.004,14.0,0.0;</traceURL>
+        <recordedAt>1378572994355</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>14.0 0.004</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1337462930</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,29.0,0.0,29.0,0.0;</traceURL>
+        <recordedAt>1378572994360</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>29.0 0.0</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>346038645</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,25.0,0.004,25.0,0.0;</traceURL>
+        <recordedAt>1378625730145</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>25.0 0.004</parameters>
+        <testReports/>
+    </testResult>
+    <testResult>
+        <testId>966514620</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,28.0,0.005,28.0,0.0;</traceURL>
+        <recordedAt>1378625730165</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>28.0 0.005</parameters>
+        <testReports/>
+    </testResult>
+    <testResult>
+        <testId>-795646053</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,21.0,0.004,21.0,0.0;</traceURL>
+        <recordedAt>1378625730177</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>21.0 0.004</parameters>
+        <testReports/>
+    </testResult>
+    <testResult>
+        <testId>-985797639</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,24.0,0.007,24.0,0.0;</traceURL>
+        <recordedAt>1378730215856</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>24.6 0.007116666666666667</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1086263592</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,29.0,0.004,29.0,0.0;</traceURL>
+        <recordedAt>1378730275560</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>29.4 0.004416666666666667</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1145330955</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,17.0,0.006,17.0,0.0;</traceURL>
+        <recordedAt>1378730275566</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>17.53333333333333 0.006483333333333334</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1484246699</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,16.0,0.002,16.0,0.0;</traceURL>
+        <recordedAt>1378731236483</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>16.46666666666667 0.0025833333333333333</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>7766380</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,46.0,0.0,46.0,0.0;</traceURL>
+        <recordedAt>1378731236493</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>46.06666666666666 8.333333333333334E-5</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1465209291</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,40.0,0.007,40.0,0.0;</traceURL>
+        <recordedAt>1378731241947</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>40.46666666666667 0.007516666666666667</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1047989004</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,48.0,0.007,48.0,0.0;</traceURL>
+        <recordedAt>1378732197265</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>48.2 0.007683333333333334</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1166691201</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,32.0,0.008,32.0,0.0;</traceURL>
+        <recordedAt>1378732197278</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>32.06666666666666 0.008316666666666667</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>104664512</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,36.0,0.001,36.0,0.0;</traceURL>
+        <recordedAt>1378732202567</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>36.86666666666667 0.0018166666666666667</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>785654569</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,42.0,0.005,42.0,0.0;</traceURL>
+        <recordedAt>1378733163298</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>42.86666666666667 0.00585</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>493998385</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,13.0,0.006,13.0,0.0;</traceURL>
+        <recordedAt>1378733218024</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>13.533333333333333 0.006616666666666667</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1677665728</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,18.0,0.008,18.0,0.0;</traceURL>
+        <recordedAt>1378733218035</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>18.066666666666666 0.008150000000000001</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>2074130900</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,49.0,0.002,49.0,0.0;</traceURL>
+        <recordedAt>1378734178759</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>49.13333333333333 0.0021833333333333336</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>676528697</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,20.0,0.0,20.0,0.0;</traceURL>
+        <recordedAt>1378734178777</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>20.066666666666666 5.5E-4</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>2027889809</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,21.0,0.0,21.0,0.0;</traceURL>
+        <recordedAt>1378734184092</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>21.933333333333334 1.8333333333333334E-4</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-680254471</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,17.0,0.002,17.0,0.0;</traceURL>
+        <recordedAt>1378736067759</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>17.0 0.00245</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-24699782</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,27.0,0.003,27.0,0.0;</traceURL>
+        <recordedAt>1378736067773</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 0.0</states>
+        <parameters>27.666666666666668 0.0032500000000000003</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-2006852240</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,26.0,0.003,26.0,0.0;</traceURL>
+        <recordedAt>1378737028157</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>26.466666666666665 0.003316666666666667</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1282955126</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,31.0,0.0,31.0,0.0;</traceURL>
+        <recordedAt>1378737028301</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>31.266666666666666 8.500000000000001E-4</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1383584019</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,28.0,0.008,28.0,0.0;</traceURL>
+        <recordedAt>1378737028447</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>28.866666666666667 0.008183333333333334</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>1647228054</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,43.0,0.001,43.0,0.0;</traceURL>
+        <recordedAt>1378737929069</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>43.666666666666664 0.0015166666666666668</parameters>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+    <testResult>
+        <testId>-1710125961</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,14.0,0.005,14.0,0.0;</traceURL>
+        <recordedAt>1378737989111</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>14.6 0.005816666666666667</parameters>
+        <testReports/>
+    </testResult>
+    <testResult>
+        <testId>-552861115</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,sine,33.0,0.007,33.0,0.0;</traceURL>
+        <recordedAt>1378737989128</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 2.0 2.0 2.0 2.0 2.0 2.0 3.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 2.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>33.4 0.007383333333333334</parameters>
+        <testReports/>
+    </testResult>
+</testResultsCollector>

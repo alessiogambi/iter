@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<testResultsCollector>
+    <testResult>
+        <testId>-648346845</testId>
+        <customerName>ale</customerName>
+        <serviceName>ale</serviceName>
+        <loadGeneratorClass>at.ac.tuwien.iter.loadgenerators.TriangleLoadGenerator</loadGeneratorClass>
+        <traceURL>http://10.99.0.118:8083/trace?tracespec=300:clients1,triangle,0.0,85.0;</traceURL>
+        <recordedAt>1379675800200</recordedAt>
+        <states>1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0 1.0</states>
+        <parameters>0.94 85.0</parameters>
+        <controllerDB>jdbc:hsqldb:file:/opt/iter/src/test/resources/datacollection/datacollection1-controller</controllerDB>
+        <serviceDB>jdbc:hsqldb:file:/opt/iter/src/test/resources/datacollection/datacollection1-service</serviceDB>
+        <clientsDB>/opt/iter/src/test/resources/datacollection/datacollection1-clients</clientsDB>
+        <testReports>
+            <testReport>
+                <testedProperty>plasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>inelasticity</testedProperty>
+                <testOutcome>SKIPPED</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>no-failed-request</testedProperty>
+                <testOutcome>ERROR</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>absolute-failed-requests-10</testedProperty>
+                <testOutcome>ERROR</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>relative-failed-requests-1.0-100</testedProperty>
+                <testOutcome>ERROR</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>relative-failed-requests-5.0-100</testedProperty>
+                <testOutcome>ERROR</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>relative-failed-requests-10.0-100</testedProperty>
+                <testOutcome>ERROR</testOutcome>
+            </testReport>
+            <testReport>
+                <testedProperty>avg-response-time</testedProperty>
+                <testOutcome>PASSED</testOutcome>
+            </testReport>
+        </testReports>
+    </testResult>
+</testResultsCollector>
