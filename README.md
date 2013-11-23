@@ -11,9 +11,11 @@ The theory underlying ITER is described in some research papers (see the Referen
 
 The architecture of the tool, its main features, the intended users and the available extensions are described in a paper submitted to the Formal Demo track of the [International Conference on Software Engineering (ICSE'14)][3]. The next sections summarize these aspects, and we remand to the code for a detailed understanding of the tool's implementation.
 
-A short video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE " target="_blank">on YouTube</a>.
-The demo shows the tool main features, and uses the implementation of the iterative test suite refinement methods proposed in [13][13].
-Another goal of the demo is to show how the tool can be easily extended by providing new (or customized) implementations of the different key elements that comprise its architecture.
+A short video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=Xk24Sf8Ucig" target="_blank">on YouTube</a>.
+The video shows the main motivations for developing the tool, its main features. In the demo we use the implementation of the iterative test suite refinement methods that we proposed in [13].
+The demo shows also how the tool can be extended by providing new (or customized) implementations of the different key elements that comprise its architecture.
+
+Other videos, more focused on each of the main points of the tool, will be linked to this page in the future.
 
 # Some Theory
 
@@ -37,7 +39,7 @@ In this way, we generate easily different test cases that target the very same d
 ## A Simple Example
 
 Imagine that we need to test an elastic n-tier Web application that for example implement and auction site.
-The application is composed of various components that are run by different virtual machines. For example, the load balancer and the monitoring component run in a medium instance, the web server and the application server in a small instance and the database in a large instance. Web and application servers can dynamically added and removed. An additional small instance runs the control logic that decides when to add and remove the instances of these machines. All these information (and something more) are stored inside the service manifest (1). An example of such file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml).
+The application is composed of various components that are run by different virtual machines. For example, the load balancer and the monitoring component run in a medium instance, the web server and the application server in a small instance and the database in a large instance. Web and application servers can dynamically added and removed. An additional small instance runs the control logic that decides when to add and remove the instances of these machines. All these information (and something more) are stored inside the service manifest (1). An example of such file can be downloaded from [here](doodle-service-manifest.xml).
 
 To stress the application we define two types of user sessions, namely *buyers* and *sellers*, that defined (possibly randomized) sequences of users request. For example, `login`, `search product`, `bid`, `buy`, and so on. The logic of user sessions is captured inside a JMeter test plan, a widely known workload generator (2). An example of such file can be downloaded from [here](http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx), and it can be open with the JMeter tool (version 2.9 with GUI) after installing the extensions available [here](http://jmeter-plugins.org/wiki/StandardSet/).
 
