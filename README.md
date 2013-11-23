@@ -11,6 +11,8 @@ The theory underlying ITER is described in some research papers (see the Referen
 
 The architecture of the tool, its main features, the intended users and the available extensions are described in a paper submitted to the Formal Demo track of the [International Conference on Software Engineering (ICSE'14)][3]. The next sections summarize these aspects, and we remand to the code for a detailed understanding of the tool's implementation.
 
+**Live Demo**  
+
 A short video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=Xk24Sf8Ucig" target="_blank">on YouTube</a>.
 The video shows the main motivations for developing the tool, its main features. In the demo we use the implementation of the iterative test suite refinement methods that we proposed in [13].
 The demo shows also how the tool can be extended by providing new (or customized) implementations of the different key elements that comprise its architecture.
