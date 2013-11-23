@@ -1,0 +1,6 @@
+CREATE USER SA PASSWORD "" ADMIN
+/*C1*/SET SCHEMA PUBLIC
+CONNECT USER SA
+CREATE TABLE controller_activation_dsg_customers_ale_services_ale (  time timestamp,  frontend double,  backend double,  appserver double,  controller double,  avgJob double)
+CREATE TABLE controller_target_configuration_dsg_customers_ale_services_ale (  time timestamp,  frontend double,  backend double,  appserver double,  controller double)
+DISCONNECT
