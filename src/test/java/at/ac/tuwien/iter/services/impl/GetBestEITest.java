@@ -43,7 +43,7 @@ public class GetBestEITest {
 						.getAbsolutePath());
 
 		System.getProperties().put(
-				IterSymbolsNames.BOOTSTRAP_FILE,
+				IterSymbolsNames.INPUT_FILE,
 				(new File("src/test/resources/bootstrap.xml"))
 						.getAbsolutePath());
 
@@ -140,7 +140,7 @@ public class GetBestEITest {
 		try {
 			bootstrapFile = new File(
 					symbolSource
-							.valueForSymbol(IterSymbolsNames.BOOTSTRAP_FILE));
+							.valueForSymbol(IterSymbolsNames.INPUT_FILE));
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}

@@ -60,7 +60,7 @@ public class IterTest {
 						InputSampler.class));
 
 		File bootstrapFile = new File(registry.getService(SymbolSource.class)
-				.valueForSymbol(IterSymbolsNames.BOOTSTRAP_FILE));
+				.valueForSymbol(IterSymbolsNames.INPUT_FILE));
 		File testResultsFile = new File(registry.getService(SymbolSource.class)
 				.valueForSymbol(IterSymbolsNames.TEST_RESULTS_FILE));
 

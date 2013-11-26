@@ -41,7 +41,7 @@ public class BootstrapingTest {
 		// SETUP THE ENVIRONMENT: NOTE THAT THIS IS REALLY ANNOYNG !
 		// NOTE THAT THIS SHOULD BE PASSED VIA COMMAND LINE TOO
 		System.getProperties().put(
-				IterSymbolsNames.BOOTSTRAP_FILE,
+				IterSymbolsNames.INPUT_FILE,
 				(new File("src/test/resources/bootstrap.xml"))
 						.getAbsolutePath());
 

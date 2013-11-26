@@ -14,7 +14,7 @@ public class MainTest {
 
 		String manifestURL = "http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml";
 		String jmxURL = "http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx";
-		String[] _args = { "-c", "ite", "-s", "ite", "-m", manifestURL, "-j",
+		String[] _args = { "-b", "-c", "ite", "-s", "ite", "-m", manifestURL, "-j",
 				jmxURL };
 		try {
 			Main.main(_args);

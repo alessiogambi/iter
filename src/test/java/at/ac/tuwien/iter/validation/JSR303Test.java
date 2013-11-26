@@ -35,7 +35,7 @@ public class JSR303Test {
 						.getAbsolutePath());
 
 		System.getProperties().put(
-				IterSymbolsNames.BOOTSTRAP_FILE,
+				IterSymbolsNames.INPUT_FILE,
 				(new File("src/test/resources/bootstrap.xml"))
 						.getAbsolutePath());
 

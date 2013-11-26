@@ -12,7 +12,7 @@ public class IterSymbolsNames {
 	public static final String LB = "ac.at.tuwien.iter.lb";
 	public static final String UB = "ac.at.tuwien.iter.ub";
 
-	public static final String BOOTSTRAP_FILE = "ac.at.tuwien.iter.bootstrap.file";
+	public static final String INPUT_FILE = "ac.at.tuwien.iter.bootstrap.file";
 	public static final String TEST_RESULTS_FILE = "ac.at.tuwien.iter.testresults.file";
 
 	public static final String JOPERA_URL = "ac.at.tuwien.iter.jopera.url";
