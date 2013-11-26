@@ -174,7 +174,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>at.ac.tuwien.iter.Iter</mainClass>
+					<mainClass>at.ac.tuwien.iter.Main</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>

@@ -1,3 +1,10 @@
+# Local Configuration Files
+conf/cloud.properties
+
+# Maven Target
+target
+
+# Java class files
 *.class
 
 # Package Files #

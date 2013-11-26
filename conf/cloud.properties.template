@@ -1,0 +1,45 @@
+# Experiment Timeout (this account for deploy, run and wait activities)
+ac.at.tuwien.iter.experiment.timeout=1500000
+
+
+# TODO This must be configured
+
+# AUToCLES endpoint. Note either configure the DNS or change 'autocles:8080' with the ip:port of the service endpoint.
+ac.at.tuwien.iter.jopera.url=http://autocles:8080/rest/Autocles/Autocles/1.0/
+
+# TODO This must be configured
+
+# Endpoint of the Trace Generator to generate workloads on the fly
+ac.at.tuwien.iter.tracegenerator.url=http://autocles:8083/trace
+
+# Load Generators configurations. Each load generator that is contributed to the application
+# may need its own configuration setting. For the search we use Upper and Lower bounds on the 
+# various input to define the search space.
+
+# Constant load generator configuration
+at.ac.tuwien.loadgenerator.constant.intensity.lb=10.0
+at.ac.tuwien.loadgenerator.constant.intensity.ub=300.0
+
+# Sinus load generator configuration
+at.ac.tuwien.loadgenerator.sinus.amplitude.lb=10.0
+at.ac.tuwien.loadgenerator.sinus.amplitude.ub=50.0
+at.ac.tuwien.loadgenerator.sinus.frequency.lb=0.0
+at.ac.tuwien.loadgenerator.sinus.frequency.ub=0.01
+
+# SawTooth load generator configuration
+at.ac.tuwien.loadgenerator.sawtooth.step.lb=0.0
+at.ac.tuwien.loadgenerator.sawtooth.step.ub=1.0
+at.ac.tuwien.loadgenerator.sawtooth.period.lb=60.0
+at.ac.tuwien.loadgenerator.sawtooth.period.ub=300.0
+
+# Triangle load generator configuration
+at.ac.tuwien.loadgenerator.triangle.amplitude.lb=10.0
+at.ac.tuwien.loadgenerator.triangle.amplitude.ub=200.0
+at.ac.tuwien.loadgenerator.triangle.period.lb=60.0
+at.ac.tuwien.loadgenerator.triangle.period.ub=300.0
+
+# Square load generator configuration
+at.ac.tuwien.loadgenerator.square.amplitude.lb=10.0
+at.ac.tuwien.loadgenerator.square.amplitude.ub=200.0
+at.ac.tuwien.loadgenerator.square.frequency.lb=0.0
+at.ac.tuwien.loadgenerator.square.frequency.ub=0.01

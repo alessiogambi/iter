@@ -11,12 +11,6 @@
 #
 #
 COMPONENT_NAME="iter"
-
-# 
-# TODO installation directory and log folders must be updated manually for the moment.
-#
-TODO=1
-
 COMPONENT_PATH="/opt/$COMPONENT_NAME/"
 LOG_FOLDER="/var/log/$COMPONENT_NAME/"
 
@@ -62,16 +56,11 @@ start() {
 	local oldpath="$PWD"
 	cd "$COMPONENT_PATH"
 
-	# TODO At the moment we use maven. As soon as the tool becomes a bit more stable we will provide proper
-	# startup scripts
 	export MAVEN_OPTS="$STARTUP_OPTIONS"
 
-	TODO=1
-	MANIFEST_URL=""
-	
-	TODO=1
-	JMX_URL=""
-	
+	MANIFEST_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml"
+	JMX_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx"
+
 	mvn exec:java \
 	-Dexec.args="-c ite -s ite -m $MANIFEST_URL -j $JMX_URL" 2>&1 | tee -a "$LOG_FOLDER/$COMPONENT_NAME.out"
 
@@ -79,7 +68,7 @@ start() {
 	#
 	# -c ite => NOTE THIS MUST BE 3 char long !
 	# -s ite => NOTE THIS MUST BE 3 char long !
-	#	
+	#
 	# -e plasticity (default, plasticity)
 	# -b
 	# --input-file bootstrap.xml
@@ -87,7 +76,7 @@ start() {
 	# -l sawtooth-rand
 	# -n 1
 	# -N 1
-	# -r 0 
+	# -r 0
 	cd "$oldpath"
 }
 
@@ -97,6 +86,7 @@ stop()
 	write_log "  Stopping $COMPONENT_NAME: NOT TESTED !"
 	local oldpath="$PWD"
 	cd "$COMPONENT_PATH"
+		#screen -S $COMPONENT_NAME -X quit
 		ps aux | grep iter | grep -v grep | awk '{print $2}' | sudo xargs kill -15 >> "$LOG_FOLDER/$COMPONENT_NAME".out 2>&1
 	cd "$oldpath"
 	write_log "Stopped"
@@ -106,11 +96,13 @@ stop()
 # Here the main begins
 #######################################################################
 
-if [ "$TODO" == "1" ]; then
-	write_log "The startup script must be update ! And all TODO entries removed"
-	RETVAL=1
-	exit $RETVAL
+# Check that the configuration file is there
+if [ ! -e $COMPONENT_PATH/conf/cloud.properties ]; then
+	write_log "[ERROR] Cannot find: $COMPONENT_PATH""conf/cloud.properties"
+	write_log "[ERROR] Missing configuration file!"
+	exit 1
 fi
+
 
 case "$1" in
 start)
