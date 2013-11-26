@@ -13,12 +13,25 @@ The architecture of the tool, its main features, the intended users and the avai
 
 **Live Demo**  
 
-
+<table>
+<th>
+<td>Widescreen 16:9</td>
+<td>Standard 4:3</td>
+</th>
+<tr>
+<td>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=1zLnMDkxZNU" target="_blank">
 <img src="http://img.youtube.com/vi/1zLnMDkxZNU/0.jpg" alt="ICSE'14 - Formal Demonstrations" width="240" height="180" border="10" />  
 </a>
-
-The latest video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=1zLnMDkxZNU" target="_blank">on YouTube</a>.
+</td>
+<td>
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=Ub9hQ-8ovwk" target="_blank">
+<img src="http://img.youtube.com/vi/Ub9hQ-8ovwk/0.jpg" alt="ICSE'14 - Formal Demonstrations" width="240" height="180" border="10" />  
+</a>
+</td>
+</tr>
+</table>
+The latest video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=Ub9hQ-8ovwk" target="_blank">on YouTube</a>
 The video shows the main motivations for developing the tool, its main features. In the demo we use the implementation of the iterative test suite refinement methods that we proposed in [13].
 The demo shows also how the tool can be extended by providing new (or customized) implementations of the different key elements that comprise its architecture.
 
