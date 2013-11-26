@@ -96,6 +96,14 @@ stop()
 # Here the main begins
 #######################################################################
 
+# Check that the configuration file is there
+if [ ! -e $COMPONENT_PATH/conf/cloud.properties ]; then
+	write_log "[ERROR] Cannot find: $COMPONENT_PATH""conf/cloud.properties"
+	write_log "[ERROR] Missing configuration file!"
+	exit 1
+fi
+
+
 case "$1" in
 start)
   start
