@@ -13,9 +13,12 @@ The architecture of the tool, its main features, the intended users and the avai
 
 **Live Demo**  
 
-<img src="http://img.youtube.com/vi/1zLnMDkxZNU/0.jpg" alt="ICSE VIDEO TEASER" width="240" height="180" border="10" />  
 
-A short video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=1zLnMDkxZNU" target="_blank">on YouTube</a>.
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=1zLnMDkxZNU" target="_blank">
+<img src="http://img.youtube.com/vi/1zLnMDkxZNU/0.jpg" alt="ICSE'14 - Formal Demonstrations" width="240" height="180" border="10" />  
+</a>
+
+The latest video showcases how the ITER tool works, and it can be found <a href="http://www.youtube.com/watch?feature=player_embedded&v=1zLnMDkxZNU" target="_blank">on YouTube</a>.
 The video shows the main motivations for developing the tool, its main features. In the demo we use the implementation of the iterative test suite refinement methods that we proposed in [13].
 The demo shows also how the tool can be extended by providing new (or customized) implementations of the different key elements that comprise its architecture.
 
@@ -26,7 +29,7 @@ Other videos, more focused on each of the main points of the tool, will be linke
 Preview study and command line output: <a href="http://www.youtube.com/watch?feature=player_embedded&v=Xk24Sf8Ucig" target="_blank">here</a>.
 
 
-# Some Theory
+# Some Theory Behind the Tool
 
 System-testing is a wide topic, and it can be implemented in a multitude of ways.
 We decided to adopt an automatic and iterative approach to generate and execute test cases.
