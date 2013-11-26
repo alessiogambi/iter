@@ -25,6 +25,7 @@ import org.apache.tapestry5.ioc.services.RegistryShutdownHub;
 import org.apache.tapestry5.ioc.services.SymbolSource;
 import org.apache.tapestry5.ioc.services.TypeCoercer;
 import org.gambi.tapestry5.cli.data.CLIOption;
+import org.gambi.tapestry5.cli.services.CLIOptionSource;
 import org.gambi.tapestry5.cli.services.CLIValidator;
 import org.gambi.tapestry5.cli.utils.CLISymbolConstants;
 import org.slf4j.Logger;
@@ -483,12 +484,21 @@ public class IterModule {
 
 			@Symbol(IterSymbolsNames.JOPERA_URL) URL joperaURL,
 			@Symbol(IterSymbolsNames.EXPERIMENT_TIMEOUT) long experimentTimetout,
+
 			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "output-file") File testResultFile,
 			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "bootstrap") boolean bootstrap,
-			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "input-file") File bootstrapFile) {
+			/*
+			 * 
+			 * Temporary Patch: contribute the CLIOptionSource service and check
+			 * manually for optional configurations
+			 * 
+			 * @org.gambi.tapestry5.cli.annotations.CLIOption(longName =
+			 * "input-file") File bootstrapFile,
+			 */
+			CLIOptionSource cliOptionSource) {
 
-		System.out.println("IterModule.build() customerName " + customerName);
-		System.out.println("IterModule.build() serviceName " + serviceName);
+		File bootstrapFile = typeCoercer.coerce(
+				cliOptionSource.valueForOption("input-file"), File.class);
 
 		return new IterImpl(logger, customerName, serviceName, nParallelTests,
 				nInitialTests, testResultFile, bootstrapFile, joperaURL,
