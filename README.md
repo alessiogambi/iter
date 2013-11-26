@@ -14,10 +14,11 @@ The architecture of the tool, its main features, the intended users and the avai
 **Live Demo**  
 
 <table>
-<th>
+<tr>
 <td>Widescreen 16:9</td>
 <td>Standard 4:3</td>
-</th>
+</tr>
+
 <tr>
 <td>
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=1zLnMDkxZNU" target="_blank">
