@@ -102,6 +102,9 @@ public class IterModule {
 		configuration.add(new CLIOption("b", "bootstrap", 0, false,
 				"Enable boostrap from input file."));
 
+		// Note this trick! Using the empty string is a good default for having
+		// not mandatory options. At least from the point of view of the
+		// Registry startup
 		CLIOption inputFile = new CLIOption("i", "input-file", 1, false,
 				"Input file.");
 		inputFile.setDefaultValue(symbolSource
@@ -166,32 +169,20 @@ public class IterModule {
 						}
 					}
 
-					/*
-					 * TODO Here the idea is to force the --input-file option.
-					 * One way to do that is to check for the actual provided
-					 * values on the CLI.
-					 */
-
-					// if (inputFile != null
-					// && "false".equalsIgnoreCase(bootstrap)) {
-					// accumulator
-					// .add("Bootstrap file can be specified iff the bootstrap option (-i, --input-file) is specified!");
-					//
-					// }
-
 					if (inputFile == null && "true".equalsIgnoreCase(bootstrap)) {
 						accumulator.add("Input file is not specified.");
 
-					} else if (!new File(inputFile).exists()
+					} else if (inputFile != null
+							&& !new File(inputFile).exists()
 							&& "true".equalsIgnoreCase(bootstrap)) {
 						accumulator.add(String.format(
-								"Input file %s doen not exists !.", inputFile));
-
+								"Input file %s does not exists !.", new File(
+										inputFile).getAbsolutePath()));
 					}
 
 				} catch (Exception e) {
 					logger.warn("Error during validation ", e);
-					accumulator.add("BootstrapfileValidator Failed!");
+					accumulator.add("BootstrapfileValidator Failed !");
 				}
 			};
 		});
@@ -270,7 +261,8 @@ public class IterModule {
 		// Default application values !
 		configuration.add(IterSymbolsNames.TEST_RESULTS_FILE, (new File(
 				"test-results.xml")).getAbsolutePath());
-		configuration.add(IterSymbolsNames.INPUT_FILE, "input-file.xml");
+		// configuration.add(IterSymbolsNames.INPUT_FILE, "input-file.xml");
+		configuration.add(IterSymbolsNames.INPUT_FILE, "");
 
 		configuration.add(IterSymbolsNames.TOLERANCE, "0.00001");
 		configuration.add(IterSymbolsNames.MIN_EI, "0.0001");
@@ -505,14 +497,13 @@ public class IterModule {
 			 * Temporary Patch: contribute the CLIOptionSource service and check
 			 * manually for optional configurations. Optional values can be
 			 * contributed to contributeFactoryDefaults()
-			 * 
-			 * @org.gambi.tapestry5.cli.annotations.CLIOption(longName =
-			 * "input-file") File bootstrapFile,
 			 */
+			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "input-file") File bootstrapFile,
+			//
 			CLIOptionSource cliOptionSource) {
 
-		File bootstrapFile = typeCoercer.coerce(
-				cliOptionSource.valueForOption("input-file"), File.class);
+		// File bootstrapFile = typeCoercer.coerce(
+		// cliOptionSource.valueForOption("input-file"), File.class);
 
 		return new IterImpl(logger, customerName, serviceName, nParallelTests,
 				nInitialTests, testResultFile, bootstrapFile, joperaURL,
