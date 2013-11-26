@@ -31,10 +31,10 @@ import at.ac.tuwien.iter.exceptions.TestExecutionException;
 import at.ac.tuwien.iter.executors.BasicRunner;
 import at.ac.tuwien.iter.executors.ConfigurationManager;
 import at.ac.tuwien.iter.services.AssertionService;
-import at.ac.tuwien.iter.services.LoadGeneratorSource;
 import at.ac.tuwien.iter.services.DataCollectionService;
 import at.ac.tuwien.iter.services.Iter;
 import at.ac.tuwien.iter.services.LoadGenerator;
+import at.ac.tuwien.iter.services.LoadGeneratorSource;
 import at.ac.tuwien.iter.services.TestSuiteEvolver;
 
 /**
@@ -564,6 +564,16 @@ public class IterImpl implements Iter {
 				logger.info("There are no more tests to run !");
 				running = false;
 			}
+		}
+		// Store to file
+		try {
+			TestResultsCollector.saveToFile(testResultFile.getAbsolutePath(),
+					testResultsCollector);
+			logger.info("Results stored to " + testResultFile.getAbsolutePath());
+		} catch (Exception e) {
+			logger.error("Results cannot be stored to "
+					+ testResultFile.getAbsolutePath());
+			e.printStackTrace();
 		}
 	}
 }
