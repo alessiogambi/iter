@@ -1,8 +1,13 @@
 # Experiment Timeout (this account for deploy, run and wait activities)
 ac.at.tuwien.iter.experiment.timeout=1500000
 
+
+# TODO This must be configured
+
 # AUToCLES endpoint. Note either configure the DNS or change 'autocles:8080' with the ip:port of the service endpoint.
 ac.at.tuwien.iter.jopera.url=http://autocles:8080/rest/Autocles/Autocles/1.0/
+
+# TODO This must be configured
 
 # Endpoint of the Trace Generator to generate workloads on the fly
 ac.at.tuwien.iter.tracegenerator.url=http://autocles:8083/trace
