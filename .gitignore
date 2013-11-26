@@ -1,3 +1,7 @@
+# Maven Target
+target
+
+# Java class files
 *.class
 
 # Package Files #
