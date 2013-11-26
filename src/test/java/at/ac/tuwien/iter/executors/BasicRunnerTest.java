@@ -68,7 +68,7 @@ public class BasicRunnerTest {
 				testFile, manifestFile, 0.0, 30.0, 0.0, 0.01, //
 				100, // nBins
 				registry.getService("RandomSinusLoadGenerator",
-						InputSampler.class));
+						InputSampler.class), 300);
 		dataCollectionService = registry
 				.getService(DataCollectionService.class);
 
@@ -161,7 +161,7 @@ public class BasicRunnerTest {
 				testFile, manifestFile, 0.0, 30.0, 0.0, 0.01, //
 				100, // nBins
 				registry.getService("RandomSinusLoadGenerator",
-						InputSampler.class));
+						InputSampler.class), 300);
 
 		// at.ac.tuwien.iter.loadgenerators.Test initialTest = loadGenerator
 		// .generateTest(typeCoercer.coerce(params, Number[].class));

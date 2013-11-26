@@ -57,7 +57,7 @@ public class IterTest {
 				100, // nBins
 
 				registry.getService("RandomSinusLoadGenerator",
-						InputSampler.class));
+						InputSampler.class), 300);
 
 		File bootstrapFile = new File(registry.getService(SymbolSource.class)
 				.valueForSymbol(IterSymbolsNames.INPUT_FILE));
