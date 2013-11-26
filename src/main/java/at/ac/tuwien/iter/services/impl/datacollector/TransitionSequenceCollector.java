@@ -25,7 +25,7 @@ import javax.xml.xpath.XPathFactory;
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpException;
 import org.apache.commons.httpclient.methods.GetMethod;
-import org.apache.tapestry5.ioc.annotations.Symbol;
+import org.gambi.tapestry5.cli.annotations.CLIOption;
 import org.slf4j.Logger;
 import org.w3c.dom.Document;
 import org.w3c.dom.NodeList;
@@ -49,8 +49,8 @@ public class TransitionSequenceCollector implements DataCollectionService {
 	private String serviceName;
 
 	public TransitionSequenceCollector(Logger logger,
-			@Symbol("args:customer-name") String customerName,
-			@Symbol("args:service-name") String serviceName) {
+			@CLIOption(longName = "customer-name") String customerName,
+			@CLIOption(longName = "service-name") String serviceName) {
 		this.logger = logger;
 		this.customerName = customerName;
 		this.serviceName = serviceName;

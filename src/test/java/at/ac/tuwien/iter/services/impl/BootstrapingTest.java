@@ -100,10 +100,10 @@ public class BootstrapingTest {
 		}
 
 		try {
-			registry.getService(SymbolSource.class).valueForSymbol(
-					"args:evolve-with");
+			registry.getService(CLIOptionSource.class).valueForOption(
+					"evolve-with");
 		} catch (Exception e) {
-			Assert.assertTrue(e.getMessage().contains("args:evolve-with")
+			Assert.assertTrue(e.getMessage().contains("evolve-with")
 					&& e.getMessage().contains("not defined"));
 		}
 	}
@@ -132,8 +132,6 @@ public class BootstrapingTest {
 			Assert.fail("An Exception was generated");
 		}
 
-		// Assert.assertNotNull(registry.getService(SymbolSource.class)
-		// .valueForSymbol("args:evolve-with"));
 	}
 
 	// @Test
@@ -168,8 +166,6 @@ public class BootstrapingTest {
 			Assert.fail("An Exception was generated");
 		}
 
-		// Assert.assertNotNull(registry.getService(SymbolSource.class)
-		// .valueForSymbol("args:evolve-with"));
 	}
 
 	@Test
@@ -211,12 +207,6 @@ public class BootstrapingTest {
 			Assert.fail("An Exception was generated");
 		}
 
-		// Assert.assertEquals(inputFile,
-		// registry.getService(SymbolSource.class)
-		// .valueForSymbol("args:input-file"));
-		// Assert.assertEquals(outputFile,
-		// registry.getService(SymbolSource.class)
-		// .valueForSymbol("args:output-file"));
 	}
 
 	@Test
@@ -232,9 +222,6 @@ public class BootstrapingTest {
 			e.printStackTrace();
 			Assert.fail("An Exception was generated");
 		}
-
-		// Assert.assertNotNull(registry.getService(SymbolSource.class)
-		// .valueForSymbol("args:bootstrap"));
 	}
 
 	// @Test
@@ -266,8 +253,8 @@ public class BootstrapingTest {
 			e.printStackTrace();
 			Assert.fail("An Exception was generated");
 		}
-		Assert.assertNotNull(registry.getService(SymbolSource.class)
-				.valueForSymbol("args:bootstrap"));
+		Assert.assertNotNull(registry.getService(CLIOptionSource.class)
+				.valueForOption("bootstrap"));
 	}
 
 	@Test
