@@ -1,3 +1,6 @@
+# Local Configuration Files
+conf/cloud.properties
+
 # Maven Target
 target
 
