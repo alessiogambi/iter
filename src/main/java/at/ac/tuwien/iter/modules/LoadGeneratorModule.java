@@ -41,6 +41,14 @@ import at.ac.tuwien.iter.utils.IterSymbolsNames;
  */
 public class LoadGeneratorModule {
 
+	public static final String DURATION_IN_SEC = "at.ac.tuwien.loadgenerator.duration";
+
+	public static void contributeFactoryDefaults(
+			MappedConfiguration<String, Object> configuration) {
+
+		configuration.add(LoadGeneratorModule.DURATION_IN_SEC, "300");
+	}
+
 	/**
 	 * Load generator need some user configurations. We specify them as
 	 * contributions to the CLIParser that is the service that interprets the
@@ -145,7 +153,9 @@ public class LoadGeneratorModule {
 			@Symbol(SinusLoadGenerator.AMPLITUDE_LB) double amplitudeLB,
 			@Symbol(SinusLoadGenerator.AMPLITUDE_UB) double amplitudeUB,
 			@Symbol(SinusLoadGenerator.FREQUENCY_LB) double frequencyLB,
-			@Symbol(SinusLoadGenerator.FREQUENCY_UB) double frequencyUB
+			@Symbol(SinusLoadGenerator.FREQUENCY_UB) double frequencyUB,
+
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration
 
 	) {
 
@@ -154,7 +164,7 @@ public class LoadGeneratorModule {
 		return new SinusLoadGenerator(logger, "RandomSinusLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
 				manifestURL, amplitudeLB, amplitudeUB, frequencyLB,
-				frequencyUB, nBins, randomSampler);
+				frequencyUB, nBins, randomSampler, duration);
 	}
 
 	public LoadGenerator buildLHSSinusLoadGenerator(
@@ -171,14 +181,15 @@ public class LoadGeneratorModule {
 			@Symbol(SinusLoadGenerator.AMPLITUDE_LB) double amplitudeLB,
 			@Symbol(SinusLoadGenerator.AMPLITUDE_UB) double amplitudeUB,
 			@Symbol(SinusLoadGenerator.FREQUENCY_LB) double frequencyLB,
-			@Symbol(SinusLoadGenerator.FREQUENCY_UB) double frequencyUB) {
+			@Symbol(SinusLoadGenerator.FREQUENCY_UB) double frequencyUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler lhsSampler = new LatinHypercubeInputSampler();
 
 		return new SinusLoadGenerator(logger, "LHSSinusLoadGenerator", coercer,
 				traceGeneratorWebService, jmeterClientsURL, manifestURL,
 				amplitudeLB, amplitudeUB, frequencyLB, frequencyUB, nBins,
-				lhsSampler);
+				lhsSampler, duration);
 	}
 
 	public LoadGenerator buildRandomTriangleLoadGenerator(
@@ -192,14 +203,15 @@ public class LoadGeneratorModule {
 			@Symbol(TriangleLoadGenerator.AMPLITUDE_LB) double amplitudeLB,
 			@Symbol(TriangleLoadGenerator.AMPLITUDE_UB) double amplitudeUB,
 			@Symbol(TriangleLoadGenerator.PERIOD_LB) double periodLB,
-			@Symbol(TriangleLoadGenerator.PERIOD_UB) double periodUB) {
+			@Symbol(TriangleLoadGenerator.PERIOD_UB) double periodUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler randomSampler = new RandomInputSampler();
 
 		return new TriangleLoadGenerator(logger, "RandomTriangleLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
 				manifestURL, amplitudeLB, amplitudeUB, periodLB, periodUB,
-				nBins, randomSampler);
+				nBins, randomSampler, duration);
 	}
 
 	public LoadGenerator buildLHSTriangleLoadGenerator(
@@ -213,14 +225,15 @@ public class LoadGeneratorModule {
 			@Symbol(TriangleLoadGenerator.AMPLITUDE_LB) double amplitudeLB,
 			@Symbol(TriangleLoadGenerator.AMPLITUDE_UB) double amplitudeUB,
 			@Symbol(TriangleLoadGenerator.PERIOD_LB) double periodLB,
-			@Symbol(TriangleLoadGenerator.PERIOD_UB) double periodUB) {
+			@Symbol(TriangleLoadGenerator.PERIOD_UB) double periodUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler lhsSampler = new LatinHypercubeInputSampler();
 
 		return new TriangleLoadGenerator(logger, "LHSTriangleLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
 				manifestURL, amplitudeLB, amplitudeUB, periodLB, periodUB,
-				nBins, lhsSampler);
+				nBins, lhsSampler, duration);
 	}
 
 	public LoadGenerator buildRandomSawToothLoadGenerator(
@@ -234,14 +247,15 @@ public class LoadGeneratorModule {
 			@Symbol(SawToothLoadGenerator.STEP_LB) double stepLB,
 			@Symbol(SawToothLoadGenerator.STEP_UB) double stepUB,
 			@Symbol(SawToothLoadGenerator.PERIOD_LB) double periodLB,
-			@Symbol(SawToothLoadGenerator.PERIOD_UB) double periodUB) {
+			@Symbol(SawToothLoadGenerator.PERIOD_UB) double periodUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler randomSampler = new RandomInputSampler();
 
 		return new SawToothLoadGenerator(logger, "RandomSawToothLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
 				manifestURL, stepLB, stepUB, periodLB, periodUB, nBins,
-				randomSampler);
+				randomSampler, duration);
 	}
 
 	public LoadGenerator buildLHSSawToothLoadGenerator(
@@ -255,14 +269,15 @@ public class LoadGeneratorModule {
 			@Symbol(SawToothLoadGenerator.STEP_LB) double stepLB,
 			@Symbol(SawToothLoadGenerator.STEP_UB) double stepUB,
 			@Symbol(SawToothLoadGenerator.PERIOD_LB) double periodLB,
-			@Symbol(SawToothLoadGenerator.PERIOD_UB) double periodUB) {
+			@Symbol(SawToothLoadGenerator.PERIOD_UB) double periodUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler lhsSampler = new LatinHypercubeInputSampler();
 
 		return new SawToothLoadGenerator(logger, "LHSSawToothLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
 				manifestURL, stepLB, stepUB, periodLB, periodUB, nBins,
-				lhsSampler);
+				lhsSampler, duration);
 	}
 
 	public LoadGenerator buildRandomSquareLoadGenerator(
@@ -276,14 +291,15 @@ public class LoadGeneratorModule {
 			@Symbol(SquareLoadGenerator.AMPLITUDE_LB) double amplitudeLB,
 			@Symbol(SquareLoadGenerator.AMPLITUDE_UB) double amplitudeUB,
 			@Symbol(SquareLoadGenerator.FREQUENCY_LB) double frequencyLB,
-			@Symbol(SquareLoadGenerator.FREQUENCY_UB) double frequencyUB) {
+			@Symbol(SquareLoadGenerator.FREQUENCY_UB) double frequencyUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler randomSampler = new RandomInputSampler();
 
 		return new SquareLoadGenerator(logger, "RandomSquareLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
 				manifestURL, amplitudeLB, amplitudeUB, frequencyLB,
-				frequencyUB, nBins, randomSampler);
+				frequencyUB, nBins, randomSampler, duration);
 	}
 
 	public LoadGenerator buildLHSSquareLoadGenerator(
@@ -297,14 +313,15 @@ public class LoadGeneratorModule {
 			@Symbol(SquareLoadGenerator.AMPLITUDE_LB) double amplitudeLB,
 			@Symbol(SquareLoadGenerator.AMPLITUDE_UB) double amplitudeUB,
 			@Symbol(SquareLoadGenerator.FREQUENCY_LB) double frequencyLB,
-			@Symbol(SquareLoadGenerator.FREQUENCY_UB) double frequencyUB) {
+			@Symbol(SquareLoadGenerator.FREQUENCY_UB) double frequencyUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler lhsSampler = new LatinHypercubeInputSampler();
 
 		return new SquareLoadGenerator(logger, "LHSSquareLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
 				manifestURL, amplitudeLB, amplitudeUB, frequencyLB,
-				frequencyUB, nBins, lhsSampler);
+				frequencyUB, nBins, lhsSampler, duration);
 	}
 
 	public LoadGenerator buildRandomConstantLoadGenerator(
@@ -316,12 +333,14 @@ public class LoadGeneratorModule {
 			@CLIOption(longName = "service-manifest-URL") String manifestURL,
 			@Symbol(IterSymbolsNames.N_BINS) int nBins,
 			@Symbol(ConstantLoadGenerator.INTENSITY_LB) double intensityLB,
-			@Symbol(ConstantLoadGenerator.INTENSITY_UB) double intensityUB) {
+			@Symbol(ConstantLoadGenerator.INTENSITY_UB) double intensityUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 		InputSampler randomSampler = new RandomInputSampler();
 
 		return new ConstantLoadGenerator(logger, "RandomConstantLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
-				manifestURL, intensityLB, intensityUB, nBins, randomSampler);
+				manifestURL, intensityLB, intensityUB, nBins, randomSampler,
+				duration);
 	}
 
 	public LoadGenerator buildLHSConstantLoadGenerator(
@@ -334,13 +353,15 @@ public class LoadGeneratorModule {
 			@Symbol(IterSymbolsNames.N_BINS) int nBins,
 
 			@Symbol(ConstantLoadGenerator.INTENSITY_LB) double intensityLB,
-			@Symbol(ConstantLoadGenerator.INTENSITY_UB) double intensityUB) {
+			@Symbol(ConstantLoadGenerator.INTENSITY_UB) double intensityUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
 		InputSampler lhsSampler = new LatinHypercubeInputSampler();
 
 		return new ConstantLoadGenerator(logger, "LHSConstantLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
-				manifestURL, intensityLB, intensityUB, nBins, lhsSampler);
+				manifestURL, intensityLB, intensityUB, nBins, lhsSampler,
+				duration);
 	}
 
 	@Contribute(LoadGeneratorSource.class)

@@ -48,7 +48,7 @@ public class TriangleLoadGeneratorTest {
 				// period Bounds - 1 to 5 minutes
 				60.0, 300, //
 				100, // nBins
-				new RandomInputSampler());
+				new RandomInputSampler(), 300);
 	}
 
 	@Test

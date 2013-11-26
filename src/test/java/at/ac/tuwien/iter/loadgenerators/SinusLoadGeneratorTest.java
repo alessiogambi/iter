@@ -44,7 +44,7 @@ public class SinusLoadGeneratorTest {
 				"http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx",
 				"", 1.0, 30.0, 0.0, 0.001, //
 				100, // nBins
-				new RandomInputSampler());
+				new RandomInputSampler(), 300);
 	}
 
 	@Test

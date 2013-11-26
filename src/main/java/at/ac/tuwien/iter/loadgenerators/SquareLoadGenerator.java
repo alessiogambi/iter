@@ -22,7 +22,6 @@ import at.ac.tuwien.tracegenerator.data.TraceSpecification;
  * 
  */
 public class SquareLoadGenerator implements LoadGenerator {
-	private static final int DEFAULT_DURATION = 300;
 
 	public static final String AMPLITUDE_LB = "at.ac.tuwien.loadgenerator.square.amplitude.lb";
 	public static final String AMPLITUDE_UB = "at.ac.tuwien.loadgenerator.square.amplitude.ub";
@@ -72,6 +71,7 @@ public class SquareLoadGenerator implements LoadGenerator {
 	}
 
 	private String serviceID;
+	private int duration;
 
 	public SquareLoadGenerator(
 			Logger logger,// THIS IS BAD!
@@ -79,10 +79,10 @@ public class SquareLoadGenerator implements LoadGenerator {
 			TypeCoercer coercer, String traceGeneratorWebService,
 			String jmeterTestFile, String manifest, double amplitudeLB,
 			double amplitudeUB, double frequencyLB, double frequencyUB,
-			int nBins, InputSampler inputSampler) {
+			int nBins, InputSampler inputSampler, int duration) {
 		super();
 		this.serviceID = serviceID;
-
+		this.duration = duration;
 		this.logger = logger;
 		this.jmeterTestFile = jmeterTestFile;
 		this.serviceManifest = manifest;
@@ -151,8 +151,8 @@ public class SquareLoadGenerator implements LoadGenerator {
 			}
 		}
 
-		TraceSpecification _traceSpec = new TraceSpecification(
-				DEFAULT_DURATION, allClients);
+		TraceSpecification _traceSpec = new TraceSpecification(duration,
+				allClients);
 
 		// Automatically convert to the right string !
 		String traceSpec = coercer.coerce(_traceSpec, String.class);

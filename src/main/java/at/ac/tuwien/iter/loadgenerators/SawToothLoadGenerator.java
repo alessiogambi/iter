@@ -23,7 +23,6 @@ import at.ac.tuwien.tracegenerator.data.TraceSpecification;
  * 
  */
 public class SawToothLoadGenerator implements LoadGenerator {
-	private static final int DEFAULT_DURATION = 300;
 
 	public static final String STEP_LB = "at.ac.tuwien.loadgenerator.sawtooth.step.lb";
 	public static final String STEP_UB = "at.ac.tuwien.loadgenerator.sawtooth.step.ub";
@@ -73,6 +72,7 @@ public class SawToothLoadGenerator implements LoadGenerator {
 	}
 
 	private String serviceID;
+	private int duration;
 
 	public SawToothLoadGenerator(
 			Logger logger,
@@ -81,11 +81,11 @@ public class SawToothLoadGenerator implements LoadGenerator {
 			TypeCoercer coercer, String traceGeneratorWebService,
 			String jmeterTestFile, String manifest, double stepLB,
 			double stepUB, double periodLB, double periodUB, int nBins,
-			InputSampler inputSampler) {
+			InputSampler inputSampler, int duration) {
 		super();
 
 		this.serviceID = serviceID;
-
+		this.duration = duration;
 		this.logger = logger;
 		this.jmeterTestFile = jmeterTestFile;
 		this.serviceManifest = manifest;
@@ -154,8 +154,8 @@ public class SawToothLoadGenerator implements LoadGenerator {
 			}
 		}
 
-		TraceSpecification _traceSpec = new TraceSpecification(
-				DEFAULT_DURATION, allClients);
+		TraceSpecification _traceSpec = new TraceSpecification(duration,
+				allClients);
 
 		// Automatically convert to the right string !
 		String traceSpec = coercer.coerce(_traceSpec, String.class);

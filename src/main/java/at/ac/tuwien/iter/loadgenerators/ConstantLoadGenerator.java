@@ -31,8 +31,7 @@ public class ConstantLoadGenerator implements LoadGenerator {
 		this.serviceID = serviceID;
 	}
 
-	private static final int DEFAULT_DURATION = 300;
-
+	private int duration;
 	public static final String INTENSITY_LB = "at.ac.tuwien.loadgenerator.constant.intensity.lb";
 	public static final String INTENSITY_UB = "at.ac.tuwien.loadgenerator.constant.intensity.ub";
 
@@ -77,7 +76,8 @@ public class ConstantLoadGenerator implements LoadGenerator {
 			String serviceID,//
 			TypeCoercer coercer, String traceGeneratorWebService,
 			String jmeterTestFile, String manifest, double intensityLB,
-			double intensityUB, int nBins, InputSampler inputSampler) {
+			double intensityUB, int nBins, InputSampler inputSampler,
+			int duration) {
 
 		this.logger = logger;
 		this.jmeterTestFile = jmeterTestFile;
@@ -89,7 +89,7 @@ public class ConstantLoadGenerator implements LoadGenerator {
 		this.intensityBounds = new double[] { intensityLB, intensityUB };
 		this.nBins = nBins;
 		this.serviceID = serviceID;
-
+		this.duration = duration;
 		this.inputSampler = inputSampler;
 
 		logger.debug("Input Bounds: " + Arrays.toString(getLowerBounds()) + " "
@@ -139,8 +139,8 @@ public class ConstantLoadGenerator implements LoadGenerator {
 			}
 		}
 
-		TraceSpecification _traceSpec = new TraceSpecification(
-				DEFAULT_DURATION, allClients);
+		TraceSpecification _traceSpec = new TraceSpecification(duration,
+				allClients);
 
 		// Automatically convert to the right string !
 		String traceSpec = coercer.coerce(_traceSpec, String.class);

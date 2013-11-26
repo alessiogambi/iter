@@ -22,7 +22,6 @@ import at.ac.tuwien.tracegenerator.data.TraceSpecification;
  * 
  */
 public class SinusLoadGenerator implements LoadGenerator {
-	private static final int DEFAULT_DURATION = 300;
 
 	public static final String AMPLITUDE_LB = "at.ac.tuwien.loadgenerator.sinus.amplitude.lb";
 	public static final String AMPLITUDE_UB = "at.ac.tuwien.loadgenerator.sinus.amplitude.ub";
@@ -71,6 +70,8 @@ public class SinusLoadGenerator implements LoadGenerator {
 	private Logger logger;
 	private String serviceID;
 
+	private int duration;
+
 	public SinusLoadGenerator(
 			Logger logger,
 			// THIS IS BAD!
@@ -78,10 +79,10 @@ public class SinusLoadGenerator implements LoadGenerator {
 			TypeCoercer coercer, String traceGeneratorWebService,
 			String jmeterTestFile, String manifest, double amplitudeLB,
 			double amplitudeUB, double frequencyLB, double frequencyUB,
-			int nBins, InputSampler inputSampler) {
+			int nBins, InputSampler inputSampler, int duration) {
 		super();
 		this.serviceID = serviceID;
-
+		this.duration = duration;
 		this.logger = logger;
 		this.jmeterTestFile = jmeterTestFile;
 		this.serviceManifest = manifest;
@@ -152,7 +153,7 @@ public class SinusLoadGenerator implements LoadGenerator {
 		}
 
 		TraceSpecification _traceSpec = new TraceSpecification(
-				DEFAULT_DURATION, allClients);
+				duration, allClients);
 
 		// Automatically convert to the right string !
 		String traceSpec = coercer.coerce(_traceSpec, String.class);

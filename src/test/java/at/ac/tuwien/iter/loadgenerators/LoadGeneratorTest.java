@@ -44,7 +44,7 @@ public class LoadGeneratorTest {
 				"", 1.0, 30.0, 0.0, 0.001, //
 				100, // nBins
 				registry.getService("RandomSinusLoadGenerator",
-						InputSampler.class));
+						InputSampler.class), 300);
 	}
 
 	@Test

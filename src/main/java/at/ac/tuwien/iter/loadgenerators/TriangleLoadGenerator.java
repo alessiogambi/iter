@@ -23,7 +23,6 @@ import at.ac.tuwien.tracegenerator.data.TraceSpecification;
  * 
  */
 public class TriangleLoadGenerator implements LoadGenerator {
-	private static final int DEFAULT_DURATION = 300;
 
 	public static final String AMPLITUDE_LB = "at.ac.tuwien.loadgenerator.triangle.amplitude.lb";
 	public static final String AMPLITUDE_UB = "at.ac.tuwien.loadgenerator.triangle.amplitude.ub";
@@ -74,6 +73,7 @@ public class TriangleLoadGenerator implements LoadGenerator {
 	}
 
 	private String serviceID;
+	private int duration;
 
 	public TriangleLoadGenerator(
 			Logger logger,
@@ -82,10 +82,10 @@ public class TriangleLoadGenerator implements LoadGenerator {
 			TypeCoercer coercer, String traceGeneratorWebService,
 			String jmeterTestFile, String manifest, double amplitudeLB,
 			double amplitudeUB, double periodLB, double periodUB, int nBins,
-			InputSampler inputSampler) {
+			InputSampler inputSampler, int duration) {
 		super();
 		this.serviceID = serviceID;
-
+		this.duration = duration;
 		this.logger = logger;
 		this.jmeterTestFile = jmeterTestFile;
 		this.serviceManifest = manifest;
@@ -153,8 +153,8 @@ public class TriangleLoadGenerator implements LoadGenerator {
 			}
 		}
 
-		TraceSpecification _traceSpec = new TraceSpecification(
-				DEFAULT_DURATION, allClients);
+		TraceSpecification _traceSpec = new TraceSpecification(duration,
+				allClients);
 
 		// Automatically convert to the right string !
 		String traceSpec = coercer.coerce(_traceSpec, String.class);

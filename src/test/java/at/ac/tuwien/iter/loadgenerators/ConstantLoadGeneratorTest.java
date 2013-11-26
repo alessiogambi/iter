@@ -13,7 +13,6 @@ import org.slf4j.LoggerFactory;
 
 import at.ac.tuwien.iter.modules.IterModule;
 import at.ac.tuwien.iter.services.LoadGenerator;
-import at.ac.tuwien.iter.services.impl.loadgenerators.InputSampler;
 import at.ac.tuwien.iter.services.impl.loadgenerators.RandomInputSampler;
 import at.ac.tuwien.iter.utils.IterSymbolsNames;
 
@@ -36,14 +35,15 @@ public class ConstantLoadGeneratorTest {
 	@Before
 	public void createGenerator() {// Setup
 		generator = new ConstantLoadGenerator(
-				LoggerFactory.getLogger(ConstantLoadGenerator.class),"ConstantLoadGenerator",
+				LoggerFactory.getLogger(ConstantLoadGenerator.class),
+				"ConstantLoadGenerator",
 				registry.getService(TypeCoercer.class),
 				registry.getService(SymbolSource.class).valueForSymbol(
 						IterSymbolsNames.TRACEGENERATOR_URL),
 				"http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx",
 				"", 10.0, 400.0,//
 				100, // nBins
-				new RandomInputSampler());
+				new RandomInputSampler(), 300);
 	}
 
 	@Test
