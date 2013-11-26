@@ -49,7 +49,11 @@ buildStartupOption(){
 }
 
 start() {
-	write_log "  Starting $COMPONENT_NAME"
+	if [ "$*" == "" ]; then
+	        write_log "  Starting $COMPONENT_NAME with no additional inputs"
+	else
+		write_log "  Starting $COMPONENT_NAME with additional inputs $*"
+	fi
 
 	buildStartupOption
 
@@ -62,7 +66,7 @@ start() {
 	JMX_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx"
 
 	mvn exec:java \
-	-Dexec.args="-c ite -s ite -m $MANIFEST_URL -j $JMX_URL" 2>&1 | tee -a "$LOG_FOLDER/$COMPONENT_NAME.out"
+	-Dexec.args="-c ite -s ite -m $MANIFEST_URL -j $JMX_URL $*" 2>&1 | tee -a "$LOG_FOLDER/$COMPONENT_NAME.out"
 
 	# FOR THE MEANING OF THE PARAMETERS/OPTIONS READ THE PROVIDED README.md FILE
 	#
@@ -106,7 +110,9 @@ fi
 
 case "$1" in
 start)
-  start
+# Solution taken from http://stackoverflow.com/questions/3995067/passing-second-argument-onwards-from-a-shell-script-to-java
+  shift
+  start $@
 ;;
 stop)
   stop
