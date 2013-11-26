@@ -16,3 +16,4 @@ target
 *.jar
 *.war
 *.ear
+test-results.xml
