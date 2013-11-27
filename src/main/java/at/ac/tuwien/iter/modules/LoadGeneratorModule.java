@@ -41,7 +41,7 @@ import at.ac.tuwien.iter.utils.IterSymbolsNames;
  */
 public class LoadGeneratorModule {
 
-	public static final String DURATION_IN_SEC = "at.ac.tuwien.experiment.duration";
+	public static final String DURATION_IN_SEC = "at.ac.tuwien.iter.experiment.duration";
 
 	public static void contributeFactoryDefaults(
 			MappedConfiguration<String, Object> configuration) {
