@@ -11,10 +11,13 @@ target
 .classpath
 .project
 .settings/
+.metadata/
 
 # Package Files #
 *.jar
 *.war
 *.ear
+
+# Iter Files
 test-results.xml
 datacollection-experiment/
