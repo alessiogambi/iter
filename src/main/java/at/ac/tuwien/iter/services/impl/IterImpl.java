@@ -83,7 +83,8 @@ public class IterImpl implements Iter {
 	private long experimentTimeout;
 
 	private boolean bootstrap;
-	private File bootstrapFile;
+	private boolean regression;
+	private File inputFile;
 	private File testResultFile;
 
 	private TestSuiteEvolver testSuiteEvolver;
@@ -102,12 +103,12 @@ public class IterImpl implements Iter {
 			// Test Suite Initialization.
 			int nInitialTests,
 			// Input-output
-			final File testResultFile, final File bootstrapFile,
+			final File testResultFile, final File inputFile,
 			// Experimental Environment - TODO Move this into Test execution
 			// framework
 			URL autoclesURL,
 			// Experiment setup - Pre/Post conditions ?
-			long experimentTimeout, boolean bootstrap,
+			long experimentTimeout, boolean bootstrap, boolean regression,
 			// Other services - Why we need this here ?
 			LoadGenerator loadGenerator,
 			// This should be avoided, but @PostInjection does not work fine
@@ -121,6 +122,8 @@ public class IterImpl implements Iter {
 	) {
 
 		this.bootstrap = bootstrap;
+		this.regression = regression;
+
 		this.logger = logger;
 
 		this.customerName = customerName;
@@ -140,7 +143,7 @@ public class IterImpl implements Iter {
 		this.hitCount = new Hashtable<Test, Integer>();
 
 		this.testResultFile = testResultFile;
-		this.bootstrapFile = bootstrapFile;
+		this.inputFile = inputFile;
 
 		// this.mathEngineDao = mathEngineDao;
 		this.typeCoercer = typeCoercer;
@@ -193,23 +196,23 @@ public class IterImpl implements Iter {
 		int total = 0;
 		int failed = 0;
 		int rescheduled = 0;
-		String bFile = bootstrapFile.getAbsolutePath();
+		String bFile = inputFile.getAbsolutePath();
 		long startTime = System.currentTimeMillis();
 
 		logger.info("Iter.bootstrapAndStart() BootStraping from "
-				+ bootstrapFile.getAbsolutePath());
+				+ inputFile.getAbsolutePath());
 
-		if (bootstrapFile.exists()) {
+		if (inputFile.exists()) {
 
 			// Try Load all the cached executions if the file exists
 			try {
 				testResultsCollector = TestResultsCollector
-						.loadFromFile(bootstrapFile.getAbsolutePath());
+						.loadFromFile(inputFile.getAbsolutePath());
 			} catch (Throwable e) {
 				logger.error(
 						String.format(
 								"Error. Cannot load the boostrap file %s. Skip the bootstrap process.",
-								bootstrapFile.getAbsolutePath()), e);
+								inputFile.getAbsolutePath()), e);
 				throw new TestExecutionException(
 						"Cannot load the bootstrap file");
 			}
@@ -264,7 +267,7 @@ public class IterImpl implements Iter {
 		} else {
 			logger.warn(String
 					.format("The specified boostraping file %s does not exists. Continue with no bootstrap.",
-							bootstrapFile.getAbsolutePath()));
+							inputFile.getAbsolutePath()));
 		}
 
 		long endTime = System.currentTimeMillis();
@@ -289,6 +292,79 @@ public class IterImpl implements Iter {
 				.append(" secs\n");
 		sb.append("=======================================\n");
 		logger.info(sb.toString());
+
+	}
+
+	// Return a list of tests to be executed taken from the input file
+	List<Test> regression() throws TestExecutionException {
+
+		List<Test> tests = new ArrayList<Test>();
+
+		// Stats
+		int total = 0;
+
+		String bFile = inputFile.getAbsolutePath();
+		long startTime = System.currentTimeMillis();
+
+		logger.info("Iter.regression() Regression from "
+				+ inputFile.getAbsolutePath());
+
+		if (inputFile.exists()) {
+
+			// Try Load all the cached executions if the file exists
+			TestResultsCollector inputTests = null;
+			try {
+				inputTests = TestResultsCollector.loadFromFile(inputFile
+						.getAbsolutePath());
+			} catch (Throwable e) {
+				logger.error(
+						String.format(
+								"Error. Cannot load the input file %s. Abort the regression",
+								inputFile.getAbsolutePath()), e);
+				throw new TestExecutionException(
+						"Cannot load the bootstrap file", e);
+			}
+
+			// TODO Not sure we will not have problems
+			// Create a new tests !
+			for (TestResult testResult : inputTests) {
+				Test newTest = loadGeneratorSource.getLoadGenerator(
+						testResult.getLoadGeneratorID()).generateTest(
+						testResult.getParametersAsNumbers());
+
+				logger.info("Creating Test :" + newTest);
+				tests.add(newTest);
+
+				total++;
+			}
+		} else {
+			logger.warn(String
+					.format("The specified regression file %s does not exists. Continue with no bootstrap.",
+							inputFile.getAbsolutePath()));
+		}
+
+		long endTime = System.currentTimeMillis();
+		/*
+		 * Print Statistics
+		 */
+		StringBuffer sb = new StringBuffer();
+		sb.append("\n\n").append("=======================================\n")
+				.append("\tRegression summary\n")
+				.append("=======================================\n");
+
+		sb.append("   Elaborated ").append(total).append(" previous tests\n");
+		sb.append("   Input file ").append(bFile).append("\n");
+		sb.append("   Result:\n");
+		sb.append("        - Rescheduled: ").append(total).append("\n");
+		sb.append("   Elaboration time was ")
+				.append(String.format("%.2f",
+						(double) ((endTime - startTime) / 1000l)))
+				.append(" secs\n");
+		sb.append("=======================================\n");
+		logger.info(sb.toString());
+
+		// eventually return
+		return tests;
 
 	}
 
@@ -512,6 +588,16 @@ public class IterImpl implements Iter {
 				logger.warn("Problems during the bootstrap", e);
 			}
 		}
+
+		if (regression) {
+			try {
+				experimentAgenda.addAll(regression());
+			} catch (TestExecutionException e) {
+				logger.warn("Problems during the regression", e);
+			}
+		}
+		// If the -R/--regression flag is specified we read from the input file
+		// and create (not random) tests
 
 		// If the r option is zero or not specified, we will not create random
 		// tests

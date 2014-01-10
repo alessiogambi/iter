@@ -83,6 +83,7 @@ public class IterTest {
 				// Experiment setup
 				DEFAULT_TIMEOUT,
 				true, // Bootstrap
+				false, // Regression
 				// Other services
 				loadGenerator, registry.getService(RegistryShutdownHub.class),
 				registry.getService(TypeCoercer.class),

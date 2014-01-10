@@ -139,8 +139,7 @@ public class GetBestEITest {
 
 		try {
 			bootstrapFile = new File(
-					symbolSource
-							.valueForSymbol(IterSymbolsNames.INPUT_FILE));
+					symbolSource.valueForSymbol(IterSymbolsNames.INPUT_FILE));
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
@@ -159,6 +158,7 @@ public class GetBestEITest {
 				joperaURL,//
 				DEFAULT_TIMEOUT,
 				true,// Bootstrap
+				false, // Regression
 				// Services
 				loadGenerator, registryShutdownHub, typeCoercer,
 				assertionService, dataCollectionService, plasticityEvolver,

@@ -102,6 +102,9 @@ public class IterModule {
 		configuration.add(new CLIOption("b", "bootstrap", 0, false,
 				"Enable boostrap from input file."));
 
+		configuration.add(new CLIOption("R", "regression", 0, false,
+				"Perform a regression run from input file."));
+
 		// Note this trick! Using the empty string is a good default for having
 		// not mandatory options. At least from the point of view of the
 		// Registry startup
@@ -183,6 +186,43 @@ public class IterModule {
 				} catch (Exception e) {
 					logger.warn("Error during validation ", e);
 					accumulator.add("BootstrapfileValidator Failed !");
+				}
+			};
+		});
+
+		configuration.add("RegressionfileValidator", new CLIValidator() {
+
+			public void validate(Map<CLIOption, String> options,
+					List<String> inputs, List<String> accumulator) {
+				try {
+
+					String inputFile = null;
+					// Default should already by there !
+					String regression = "false";
+
+					for (CLIOption cliOption : options.keySet()) {
+						if (cliOption.getLongOpt().equals("input-file")) {
+							inputFile = cliOption.getValue();
+						} else if (cliOption.getLongOpt().equals("regression")) {
+							regression = cliOption.getValue();
+						}
+					}
+
+					if (inputFile == null
+							&& "true".equalsIgnoreCase(regression)) {
+						accumulator.add("Input file is not specified.");
+
+					} else if (inputFile != null
+							&& !new File(inputFile).exists()
+							&& "true".equalsIgnoreCase(regression)) {
+						accumulator.add(String.format(
+								"Input file %s does not exists !.", new File(
+										inputFile).getAbsolutePath()));
+					}
+
+				} catch (Exception e) {
+					logger.warn("Error during validation ", e);
+					accumulator.add("RegressionfileValidator Failed !");
 				}
 			};
 		});
@@ -492,6 +532,7 @@ public class IterModule {
 
 			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "output-file") File testResultFile,
 			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "bootstrap") boolean bootstrap,
+			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "regression") boolean regression,
 			/*
 			 * 
 			 * Temporary Patch: contribute the CLIOptionSource service and check
@@ -507,7 +548,7 @@ public class IterModule {
 
 		return new IterImpl(logger, customerName, serviceName, nParallelTests,
 				nInitialTests, testResultFile, bootstrapFile, joperaURL,
-				experimentTimetout, bootstrap, loadGenerator,
+				experimentTimetout, bootstrap, regression, loadGenerator,
 				registryShutdownHub, typeCoercer, assertionService,
 				dataCollectionService, testSuiteEvolver, loadGeneratorSource);
 	}

@@ -369,15 +369,17 @@ public class BootstrapingTest {
 					optionSource.valueForOption("output-file"), File.class);
 			boolean bootstrap = typeCoercer.coerce(
 					optionSource.valueForOption("bootstrap"), boolean.class);
+			boolean regression = typeCoercer.coerce(
+					optionSource.valueForOption("regression"), boolean.class);
 			File bootstrapFile = typeCoercer.coerce(
 					optionSource.valueForOption("input-file"), File.class);
 
 			IterImpl iter = new IterImpl(logger, customerName, serviceName,
 					nParallelTests, nInitialTests, testResultFile,
 					bootstrapFile, joperaURL, experimentTimetout, bootstrap,
-					loadGenerator, registryShutdownHub, typeCoercer,
-					assertionService, dataCollectionService, testSuiteEvolver,
-					loadGeneratorSource);
+					regression, loadGenerator, registryShutdownHub,
+					typeCoercer, assertionService, dataCollectionService,
+					testSuiteEvolver, loadGeneratorSource);
 
 			iter.bootstrap();
 
