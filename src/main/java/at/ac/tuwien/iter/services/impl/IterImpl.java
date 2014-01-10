@@ -84,6 +84,8 @@ public class IterImpl implements Iter {
 
 	private boolean bootstrap;
 	private boolean regression;
+	private boolean dryrun;
+
 	private File inputFile;
 	private File testResultFile;
 
@@ -108,7 +110,9 @@ public class IterImpl implements Iter {
 			// framework
 			URL autoclesURL,
 			// Experiment setup - Pre/Post conditions ?
-			long experimentTimeout, boolean bootstrap, boolean regression,
+			long experimentTimeout, //
+			// Flags
+			boolean bootstrap, boolean regression, boolean dryrun,
 			// Other services - Why we need this here ?
 			LoadGenerator loadGenerator,
 			// This should be avoided, but @PostInjection does not work fine
@@ -123,6 +127,7 @@ public class IterImpl implements Iter {
 
 		this.bootstrap = bootstrap;
 		this.regression = regression;
+		this.dryrun = dryrun;
 
 		this.logger = logger;
 
@@ -580,15 +585,6 @@ public class IterImpl implements Iter {
 		// This is a "global" var in the class
 		experimentAgenda = new ArrayList<Test>();
 
-		if (bootstrap) {
-			// Shall we move exc inside the private method ?
-			try {
-				bootstrap();
-			} catch (TestExecutionException e) {
-				logger.warn("Problems during the bootstrap", e);
-			}
-		}
-
 		if (regression) {
 			try {
 				experimentAgenda.addAll(regression());
@@ -603,63 +599,85 @@ public class IterImpl implements Iter {
 		// tests
 		experimentAgenda.addAll(createRandomTests());
 
-		while (running) {
-			try {
-				logger.info("IterImpl.start() Scheduling : "
-						+ experimentAgenda.size() + " experiments to run.");
+		// Dry-Run option
 
-				// Schedule all the experiments over the N executors
-				// This can be esily become a service as well.
-				// This will block until all the experiments ran
-				scheduleAndRunExperiments(experimentAgenda);
-
-				// If for some reasons some experiment failed or must be
-				// repeated in the next round, we will keep it inside the agenda
-
-			} catch (InterruptedException e) {
-				logger.warn("Interrupted execution. Exit");
-				running = false;
-				break;
+		if (!dryrun) {
+			// This is not side effect free so we cannot be used with dry-run !
+			if (bootstrap) {
+				// Shall we move exc inside the private method ?
+				try {
+					bootstrap();
+				} catch (TestExecutionException e) {
+					logger.warn("Problems during the bootstrap", e);
+				}
 			}
+			while (running) {
+				try {
+					logger.info("IterImpl.start() Scheduling : "
+							+ experimentAgenda.size() + " experiments to run.");
 
-			// Maybe the assertions should be here !?
-			logger.info("IterImpl.start() Experiments that remains to run or must be repeated: "
-					+ experimentAgenda.size());
-			/*
-			 * - Make this a configurable setting -
-			 */
+					// Schedule all the experiments over the N executors
+					// This can be esily become a service as well.
+					// This will block until all the experiments ran
+					scheduleAndRunExperiments(experimentAgenda);
 
-			Collection<Test> newExperiments = null;
+					// If for some reasons some experiment failed or must be
+					// repeated in the next round, we will keep it inside the
+					// agenda
+
+				} catch (InterruptedException e) {
+					logger.warn("Interrupted execution. Exit");
+					running = false;
+					break;
+				}
+
+				// Maybe the assertions should be here !?
+				logger.info("IterImpl.start() Experiments that remains to run or must be repeated: "
+						+ experimentAgenda.size());
+				/*
+				 * - Make this a configurable setting -
+				 */
+
+				Collection<Test> newExperiments = null;
+				try {
+					// Evolve the test suite starting from the current one, plus
+					// the
+					// results obtained from it
+					newExperiments = testSuiteEvolver.evolveTestSuite(
+							testSuite, testResultsCollector.getTestResults());
+				} catch (Exception e) {
+					logger.warn("Error during test suite evolution. Continue",
+							e);
+				}
+
+				// THIS IS SPECIFIC FOR OUR TEST SUITE. CAN BE A CONFIGURABLE
+				// SERVICE IN CHAIN/PIPELINE with constraints (on the number of
+				// test
+				// for example). no need for update result one we have
+				// everything
+				// inside the testSuiteObject !
+				experimentAgenda.addAll(newExperiments);
+
+				// Check for termination. No more experiments means we are done
+				// !
+				if (experimentAgenda.size() == 0) {
+					logger.info("There are no more tests to run !");
+					running = false;
+				}
+			}
+			// Store to file
 			try {
-				// Evolve the test suite starting from the current one, plus the
-				// results obtained from it
-				newExperiments = testSuiteEvolver.evolveTestSuite(testSuite,
-						testResultsCollector.getTestResults());
+				TestResultsCollector.saveToFile(
+						testResultFile.getAbsolutePath(), testResultsCollector);
+				logger.info("Results stored to "
+						+ testResultFile.getAbsolutePath());
 			} catch (Exception e) {
-				logger.warn("Error during test suite evolution. Continue", e);
+				logger.error("Results cannot be stored to "
+						+ testResultFile.getAbsolutePath());
+				e.printStackTrace();
 			}
-
-			// THIS IS SPECIFIC FOR OUR TEST SUITE. CAN BE A CONFIGURABLE
-			// SERVICE IN CHAIN/PIPELINE with constraints (on the number of test
-			// for example). no need for update result one we have everything
-			// inside the testSuiteObject !
-			experimentAgenda.addAll(newExperiments);
-
-			// Check for termination. No more experiments means we are done !
-			if (experimentAgenda.size() == 0) {
-				logger.info("There are no more tests to run !");
-				running = false;
-			}
-		}
-		// Store to file
-		try {
-			TestResultsCollector.saveToFile(testResultFile.getAbsolutePath(),
-					testResultsCollector);
-			logger.info("Results stored to " + testResultFile.getAbsolutePath());
-		} catch (Exception e) {
-			logger.error("Results cannot be stored to "
-					+ testResultFile.getAbsolutePath());
-			e.printStackTrace();
+		} else {
+			logger.info("DryRun option active");
 		}
 	}
 }

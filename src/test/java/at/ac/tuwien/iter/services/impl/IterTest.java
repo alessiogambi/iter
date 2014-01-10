@@ -84,6 +84,7 @@ public class IterTest {
 				DEFAULT_TIMEOUT,
 				true, // Bootstrap
 				false, // Regression
+				false, // DryRUN
 				// Other services
 				loadGenerator, registry.getService(RegistryShutdownHub.class),
 				registry.getService(TypeCoercer.class),

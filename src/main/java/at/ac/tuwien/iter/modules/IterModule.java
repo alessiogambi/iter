@@ -105,6 +105,8 @@ public class IterModule {
 		configuration.add(new CLIOption("R", "regression", 0, false,
 				"Perform a regression run from input file."));
 
+		configuration.add(new CLIOption("d", "dry-run", 0, false, "Dry Run"));
+
 		// Note this trick! Using the empty string is a good default for having
 		// not mandatory options. At least from the point of view of the
 		// Registry startup
@@ -533,6 +535,7 @@ public class IterModule {
 			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "output-file") File testResultFile,
 			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "bootstrap") boolean bootstrap,
 			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "regression") boolean regression,
+			@org.gambi.tapestry5.cli.annotations.CLIOption(longName = "dry-run") boolean dryrun,
 			/*
 			 * 
 			 * Temporary Patch: contribute the CLIOptionSource service and check
@@ -548,9 +551,10 @@ public class IterModule {
 
 		return new IterImpl(logger, customerName, serviceName, nParallelTests,
 				nInitialTests, testResultFile, bootstrapFile, joperaURL,
-				experimentTimetout, bootstrap, regression, loadGenerator,
-				registryShutdownHub, typeCoercer, assertionService,
-				dataCollectionService, testSuiteEvolver, loadGeneratorSource);
+				experimentTimetout, bootstrap, regression, dryrun,
+				loadGenerator, registryShutdownHub, typeCoercer,
+				assertionService, dataCollectionService, testSuiteEvolver,
+				loadGeneratorSource);
 	}
 
 	// THIS MUST BE A SINGLETON SERVICE !

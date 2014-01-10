@@ -159,6 +159,7 @@ public class GetBestEITest {
 				DEFAULT_TIMEOUT,
 				true,// Bootstrap
 				false, // Regression
+				false, // DryRun
 				// Services
 				loadGenerator, registryShutdownHub, typeCoercer,
 				assertionService, dataCollectionService, plasticityEvolver,
