@@ -35,6 +35,7 @@ clean()
 	write_log "Clean $COMPONENT_NAME"
 	rm -v "$LOG_FOLDER/$COMPONENT_NAME."*
 	rm -v "$COMPONENT_PATH"start-in-screen.sh
+	rm -v "$COMPONENT_PATH"iterMatlab.log
 }
 
 buildStartupOption(){
@@ -62,11 +63,19 @@ start() {
 
 	export MAVEN_OPTS="$STARTUP_OPTIONS"
 
-	MANIFEST_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml"
+	# Fixed Rules Blocking
+	# MANIFEST_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest.xml"
+	# Proportional Rules Blocking
+        MANIFEST_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest-proportional.xml"
+	# Fixed Rules Non-Blocking - TODO
+        # MANIFEST_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest-nb.xml"
+	# Proportional Rules Non-Blocking - TODO
+        # MANIFEST_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-manifest-proportional-nb.xml"
+
 	JMX_URL="http://www.inf.usi.ch/phd/gambi/attachments/autocles/doodle-clients.jmx"
 
 	mvn exec:java \
-	-Dexec.args="-c ite -s ite -m $MANIFEST_URL -j $JMX_URL $*" 2>&1 | tee -a "$LOG_FOLDER/$COMPONENT_NAME.out"
+	-Dexec.args="-e default --input-file pesos.xml --output-file pesos-proportional.xml -l sawtooth-rand -r 0 -c pes -s pes -m $MANIFEST_URL -j $JMX_URL $*" 2>&1 | tee -a "$LOG_FOLDER/$COMPONENT_NAME.out"
 
 	# FOR THE MEANING OF THE PARAMETERS/OPTIONS READ THE PROVIDED README.md FILE
 	#
