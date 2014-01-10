@@ -6,6 +6,8 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
+	<!-- TODO List: define profiles and use appassembler to package the distribution 
+		! -->
 	<name>ITERative Test Suite Refinement for Cloud-based Applications
 	</name>
 	<url>https://github.com/alessiogambi/iter</url>
@@ -18,11 +20,14 @@
 			<email>alessio.gambi@usi.ch</email>
 			<url>http://www.inf.usi.ch/phd/gambi/</url>
 		</developer>
-		<developer>
+	</developers>
+
+	<contributors>
+		<contributor>
 			<name>Antonio Filieri</name>
 			<email>antonio.filieri@informatik.uni-stuttgart.de</email>
-		</developer>
-	</developers>
+		</contributor>
+	</contributors>
 
 	<distributionManagement>
 		<repository>
