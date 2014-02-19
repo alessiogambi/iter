@@ -17,9 +17,11 @@ import org.gambi.tapestry5.cli.annotations.CLIOption;
 import org.slf4j.Logger;
 
 import at.ac.tuwien.iter.loadgenerators.ConstantLoadGenerator;
+import at.ac.tuwien.iter.loadgenerators.RampLoadGenerator;
 import at.ac.tuwien.iter.loadgenerators.SawToothLoadGenerator;
 import at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator;
 import at.ac.tuwien.iter.loadgenerators.SquareLoadGenerator;
+import at.ac.tuwien.iter.loadgenerators.StepLoadGenerator;
 import at.ac.tuwien.iter.loadgenerators.TriangleLoadGenerator;
 import at.ac.tuwien.iter.services.LoadGenerator;
 import at.ac.tuwien.iter.services.LoadGeneratorSource;
@@ -364,6 +366,98 @@ public class LoadGeneratorModule {
 				duration);
 	}
 
+	public LoadGenerator buildRandomStepLoadGenerator(
+			Logger logger,
+			TypeCoercer coercer,
+			@Symbol(IterSymbolsNames.TRACEGENERATOR_URL) String traceGeneratorWebService,
+
+			@CLIOption(longName = "jmeter-clients-URL") String jmeterClientsURL,
+			@CLIOption(longName = "service-manifest-URL") String manifestURL,
+			@Symbol(IterSymbolsNames.N_BINS) int nBins,
+			@Symbol(StepLoadGenerator.MIN_LB) double minLB,
+			@Symbol(StepLoadGenerator.MIN_UB) double minUB,
+			@Symbol(StepLoadGenerator.MAX_LB) double maxLB,
+			@Symbol(StepLoadGenerator.MAX_UB) double maxUB,
+			@Symbol(StepLoadGenerator.WHEN) int when,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
+		InputSampler randomSampler = new RandomInputSampler();
+
+		return new StepLoadGenerator(logger, "RandomStepLoadGenerator",
+				coercer, traceGeneratorWebService, jmeterClientsURL,
+				manifestURL, minLB, minUB, maxLB, maxUB, when, nBins,
+				randomSampler, duration);
+	}
+
+	public LoadGenerator buildLHSStepLoadGenerator(
+			Logger logger,
+			TypeCoercer coercer,
+			@Symbol(IterSymbolsNames.TRACEGENERATOR_URL) String traceGeneratorWebService,
+
+			@CLIOption(longName = "jmeter-clients-URL") String jmeterClientsURL,
+			@CLIOption(longName = "service-manifest-URL") String manifestURL,
+			@Symbol(IterSymbolsNames.N_BINS) int nBins,
+
+			@Symbol(StepLoadGenerator.MIN_LB) double minLB,
+			@Symbol(StepLoadGenerator.MIN_UB) double minUB,
+			@Symbol(StepLoadGenerator.MAX_LB) double maxLB,
+			@Symbol(StepLoadGenerator.MAX_UB) double maxUB,
+			@Symbol(StepLoadGenerator.WHEN) int when,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
+
+		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+
+		return new StepLoadGenerator(logger, "LHSStepLoadGenerator", coercer,
+				traceGeneratorWebService, jmeterClientsURL, manifestURL, minLB,
+				minUB, maxLB, maxUB, when, nBins, lhsSampler, duration);
+	}
+
+	public LoadGenerator buildRandomRampLoadGenerator(
+			Logger logger,
+			TypeCoercer coercer,
+			@Symbol(IterSymbolsNames.TRACEGENERATOR_URL) String traceGeneratorWebService,
+
+			@CLIOption(longName = "jmeter-clients-URL") String jmeterClientsURL,
+			@CLIOption(longName = "service-manifest-URL") String manifestURL,
+			@Symbol(IterSymbolsNames.N_BINS) int nBins,
+			@Symbol(RampLoadGenerator.MIN_LB) double minLB,
+			@Symbol(RampLoadGenerator.MIN_UB) double minUB,
+			@Symbol(RampLoadGenerator.STEP_LB) double stepLB,
+			@Symbol(RampLoadGenerator.STEP_UB) double stepUB,
+			@Symbol(RampLoadGenerator.STEP_DURATION) int stepDuration,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
+		InputSampler randomSampler = new RandomInputSampler();
+
+		return new RampLoadGenerator(logger, "RandomRampLoadGenerator",
+				coercer, traceGeneratorWebService, jmeterClientsURL,
+				manifestURL, minLB, minUB, stepLB, stepUB, stepDuration, nBins,
+				randomSampler, duration);
+	}
+
+	public LoadGenerator buildLHSRampLoadGenerator(
+			Logger logger,
+			TypeCoercer coercer,
+			@Symbol(IterSymbolsNames.TRACEGENERATOR_URL) String traceGeneratorWebService,
+
+			@CLIOption(longName = "jmeter-clients-URL") String jmeterClientsURL,
+			@CLIOption(longName = "service-manifest-URL") String manifestURL,
+			@Symbol(IterSymbolsNames.N_BINS) int nBins,
+
+			@Symbol(RampLoadGenerator.MIN_LB) double minLB,
+			@Symbol(RampLoadGenerator.MIN_UB) double minUB,
+			@Symbol(RampLoadGenerator.STEP_LB) double stepLB,
+			@Symbol(RampLoadGenerator.STEP_UB) double stepUB,
+			@Symbol(RampLoadGenerator.STEP_DURATION) int stepDuration,
+
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
+
+		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+
+		return new RampLoadGenerator(logger, "LHSRampLoadGenerator", coercer,
+				traceGeneratorWebService, jmeterClientsURL, manifestURL, minLB,
+				minUB, stepLB, stepUB, stepDuration, nBins, lhsSampler,
+				duration);
+	}
+
 	@Contribute(LoadGeneratorSource.class)
 	public static void addLoadGenerators(
 			TypeCoercer coercer,
@@ -381,6 +475,12 @@ public class LoadGeneratorModule {
 
 			@InjectService("RandomConstantLoadGenerator") LoadGenerator randomConstant,
 			@InjectService("LHSConstantLoadGenerator") LoadGenerator lhsConstant,
+
+			@InjectService("RandomStepLoadGenerator") LoadGenerator randomStep,
+			@InjectService("LHSStepLoadGenerator") LoadGenerator lhsStep,
+
+			@InjectService("RandomRampLoadGenerator") LoadGenerator randomRamp,
+			@InjectService("LHSRampLoadGenerator") LoadGenerator lhsRamp,
 
 			MappedConfiguration<String, LoadGenerator> configuration) {
 
@@ -403,6 +503,14 @@ public class LoadGeneratorModule {
 		configuration.add("constant", randomConstant);
 		configuration.add("constant-rand", randomConstant);
 		configuration.add("constant-lhs", lhsConstant);
+
+		configuration.add("step", randomStep);
+		configuration.add("step-rand", randomStep);
+		configuration.add("step-lhs", lhsStep);
+
+		configuration.add("ramp", randomRamp);
+		configuration.add("ramp-rand", randomRamp);
+		configuration.add("ramp-lhs", lhsRamp);
 
 	}
 }
