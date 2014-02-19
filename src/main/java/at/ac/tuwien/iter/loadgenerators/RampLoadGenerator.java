@@ -121,7 +121,10 @@ public class RampLoadGenerator implements LoadGenerator {
 		for (Number[] parameters : inputSampler.sample(testSuiteSize,
 				getLowerBounds(), getUpperBounds())) {
 
-			initialTestSuite.add(generateTest(parameters));
+			Number[] _parameters = new Number[parameters.length + 1];
+			System.arraycopy(parameters, 0, _parameters, 0, parameters.length);
+			_parameters[parameters.length] = stepDurationInSecs;
+			initialTestSuite.add(generateTest(_parameters));
 
 		}
 		return initialTestSuite;
@@ -133,8 +136,7 @@ public class RampLoadGenerator implements LoadGenerator {
 	 */
 	public Test generateTest(Number... pars) {
 		// NOTE that the stepDuration parameter is fixed by default !
-		logger.debug("generateTest() " + Arrays.toString(pars)
-				+ ", stepDuration " + stepDurationInSecs);
+		logger.debug("generateTest() " + Arrays.toString(pars));
 		List<SingleTraceSpecification> allClients = new ArrayList<SingleTraceSpecification>();
 		int index = 0;
 		for (String clientID : clientList) {
@@ -143,11 +145,12 @@ public class RampLoadGenerator implements LoadGenerator {
 				// Force default values for additional 2 parameters
 				double min = Math.floor(pars[0].doubleValue());
 				double step = Math.floor(pars[1].doubleValue());
+				int duration = pars[2].intValue();
 
 				Number[] _pars = new Number[1];
 				_pars[0] = min;
 				_pars[1] = step;
-				_pars[2] = stepDurationInSecs;
+				_pars[2] = duration;
 
 				SingleTraceSpecification client = new SingleTraceSpecification(
 						clientID, "ramp", _pars);
@@ -200,9 +203,9 @@ public class RampLoadGenerator implements LoadGenerator {
 		// min client
 				randomInRange(random, minBounds[0], minBounds[1], 0),
 				// step intensity
-				randomInRange(random, stepBounds[0], stepBounds[1], 0)
-		//
-		);
+				randomInRange(random, stepBounds[0], stepBounds[1], 0),
+				//
+				stepDurationInSecs);
 	}
 
 	public Test generatePseudoRandomTest(int distance, Number... params) {
@@ -228,7 +231,11 @@ public class RampLoadGenerator implements LoadGenerator {
 			result[i] = getLowerBounds()[i] + binSize * (disc_x_max_ei + 0.5);
 		}
 
-		return generateTest(result);
+		Number[] _parameters = new Number[result.length + 1];
+		System.arraycopy(result, 0, _parameters, 0, result.length);
+		_parameters[result.length] = stepDurationInSecs;
+
+		return generateTest(_parameters);
 	}
 
 }

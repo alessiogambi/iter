@@ -16,8 +16,8 @@ import at.ac.tuwien.tracegenerator.data.SingleTraceSpecification;
 import at.ac.tuwien.tracegenerator.data.TraceSpecification;
 
 /**
- * Binding for the traceloadgenerator web service. This class implements a
- * step load
+ * Binding for the traceloadgenerator web service. This class implements a step
+ * load
  * 
  * @author alessiogambi
  * 
@@ -119,7 +119,10 @@ public class StepLoadGenerator implements LoadGenerator {
 		for (Number[] parameters : inputSampler.sample(testSuiteSize,
 				getLowerBounds(), getUpperBounds())) {
 
-			initialTestSuite.add(generateTest(parameters));
+			Number[] _parameters = new Number[parameters.length + 1];
+			System.arraycopy(parameters, 0, _parameters, 0, parameters.length);
+			_parameters[parameters.length] = whenInSecs;
+			initialTestSuite.add(generateTest(_parameters));
 
 		}
 		return initialTestSuite;
@@ -131,8 +134,7 @@ public class StepLoadGenerator implements LoadGenerator {
 	 */
 	public Test generateTest(Number... pars) {
 		// NOTE that the when parameter is fixed by default !
-		logger.debug("generateTest() " + Arrays.toString(pars) + ", when "
-				+ whenInSecs);
+		logger.debug("generateTest() " + Arrays.toString(pars));
 		List<SingleTraceSpecification> allClients = new ArrayList<SingleTraceSpecification>();
 		int index = 0;
 		for (String clientID : clientList) {
@@ -141,11 +143,12 @@ public class StepLoadGenerator implements LoadGenerator {
 				// Force default values for additional 2 parameters
 				double min = Math.floor(pars[0].doubleValue());
 				double max = Math.floor(pars[1].doubleValue());
+				int when = pars[2].intValue();
 
 				Number[] _pars = new Number[1];
 				_pars[0] = min;
 				_pars[1] = max;
-				_pars[2] = whenInSecs;
+				_pars[2] = when;
 
 				SingleTraceSpecification client = new SingleTraceSpecification(
 						clientID, "step", _pars);
@@ -192,20 +195,15 @@ public class StepLoadGenerator implements LoadGenerator {
 	}
 
 	public Test generateRandomCase() {
-		// Random test cases make sense only at 0 digits for the number of clients !
+		// Random test cases make sense only at 0 digits for the number of
+		// clients !
 		return generateTest(
-				// min client
-				randomInRange(random, 
-				minBounds[0],
-				minBounds[1], 
-				0),
+		// min client
+				randomInRange(random, minBounds[0], minBounds[1], 0),
 				// max client
-				randomInRange(random, 
-				maxBounds[0],
-				maxBounds[1], 
-				0)
+				randomInRange(random, maxBounds[0], maxBounds[1], 0),
 				//
-		);
+				whenInSecs);
 	}
 
 	public Test generatePseudoRandomTest(int distance, Number... params) {
@@ -231,7 +229,12 @@ public class StepLoadGenerator implements LoadGenerator {
 			result[i] = getLowerBounds()[i] + binSize * (disc_x_max_ei + 0.5);
 		}
 
-		return generateTest(result);
+		Number[] _parameters = new Number[result.length + 1];
+		System.arraycopy(result, 0, _parameters, 0, result.length);
+		_parameters[result.length] = whenInSecs;
+
+		return generateTest(_parameters);
+
 	}
 
 }
