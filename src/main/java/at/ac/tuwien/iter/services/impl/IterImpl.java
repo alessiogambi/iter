@@ -382,6 +382,16 @@ public class IterImpl implements Iter {
 		return randomExperiments;
 	}
 
+	// Note if we want a random initial test suite, we will use the random
+	// implementation of the input sampler
+	private List<Test> generateInitialTestSuite() {
+		if (nInitialTests != 0) {
+			return loadGenerator.generateInitialTestSuite(nInitialTests);
+		} else {
+			return new ArrayList<Test>();
+		}
+	}
+
 	// Mainly for unit testing
 	protected Collection<TestResult> getTestResults() {
 		return testResultsCollector.getTestResults();
@@ -597,7 +607,8 @@ public class IterImpl implements Iter {
 
 		// If the r option is zero or not specified, we will not create random
 		// tests
-		experimentAgenda.addAll(createRandomTests());
+		// experimentAgenda.addAll(createRandomTests());
+		experimentAgenda.addAll(generateInitialTestSuite());
 
 		// Dry-Run option
 
