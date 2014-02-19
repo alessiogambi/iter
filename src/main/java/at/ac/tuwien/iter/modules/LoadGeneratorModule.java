@@ -186,7 +186,7 @@ public class LoadGeneratorModule {
 			@Symbol(SinusLoadGenerator.FREQUENCY_UB) double frequencyUB,
 			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
-		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
 
 		return new SinusLoadGenerator(logger, "LHSSinusLoadGenerator", coercer,
 				traceGeneratorWebService, jmeterClientsURL, manifestURL,
@@ -230,7 +230,7 @@ public class LoadGeneratorModule {
 			@Symbol(TriangleLoadGenerator.PERIOD_UB) double periodUB,
 			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
-		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
 
 		return new TriangleLoadGenerator(logger, "LHSTriangleLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
@@ -274,7 +274,7 @@ public class LoadGeneratorModule {
 			@Symbol(SawToothLoadGenerator.PERIOD_UB) double periodUB,
 			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
-		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
 
 		return new SawToothLoadGenerator(logger, "LHSSawToothLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
@@ -318,7 +318,7 @@ public class LoadGeneratorModule {
 			@Symbol(SquareLoadGenerator.FREQUENCY_UB) double frequencyUB,
 			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
-		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
 
 		return new SquareLoadGenerator(logger, "LHSSquareLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
@@ -358,7 +358,7 @@ public class LoadGeneratorModule {
 			@Symbol(ConstantLoadGenerator.INTENSITY_UB) double intensityUB,
 			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
-		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
 
 		return new ConstantLoadGenerator(logger, "LHSConstantLoadGenerator",
 				coercer, traceGeneratorWebService, jmeterClientsURL,
@@ -404,7 +404,7 @@ public class LoadGeneratorModule {
 			@Symbol(StepLoadGenerator.WHEN) int when,
 			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
-		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
 
 		return new StepLoadGenerator(logger, "LHSStepLoadGenerator", coercer,
 				traceGeneratorWebService, jmeterClientsURL, manifestURL, minLB,
@@ -450,7 +450,7 @@ public class LoadGeneratorModule {
 
 			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
 
-		InputSampler lhsSampler = new LatinHypercubeInputSampler();
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
 
 		return new RampLoadGenerator(logger, "LHSRampLoadGenerator", coercer,
 				traceGeneratorWebService, jmeterClientsURL, manifestURL, minLB,
