@@ -147,7 +147,7 @@ public class RampLoadGenerator implements LoadGenerator {
 				double step = Math.floor(pars[1].doubleValue());
 				int duration = pars[2].intValue();
 
-				Number[] _pars = new Number[1];
+				Number[] _pars = new Number[ getNumberOfParameters() ];
 				_pars[0] = min;
 				_pars[1] = step;
 				_pars[2] = duration;

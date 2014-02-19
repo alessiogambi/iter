@@ -145,7 +145,7 @@ public class StepLoadGenerator implements LoadGenerator {
 				double max = Math.floor(pars[1].doubleValue());
 				int when = pars[2].intValue();
 
-				Number[] _pars = new Number[1];
+				Number[] _pars = new Number[getNumberOfParameters()];
 				_pars[0] = min;
 				_pars[1] = max;
 				_pars[2] = when;
