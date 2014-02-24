@@ -17,6 +17,7 @@ import org.gambi.tapestry5.cli.annotations.CLIOption;
 import org.slf4j.Logger;
 
 import at.ac.tuwien.iter.loadgenerators.ConstantLoadGenerator;
+import at.ac.tuwien.iter.loadgenerators.ImpulseLoadGenerator;
 import at.ac.tuwien.iter.loadgenerators.RampLoadGenerator;
 import at.ac.tuwien.iter.loadgenerators.SawToothLoadGenerator;
 import at.ac.tuwien.iter.loadgenerators.SinusLoadGenerator;
@@ -458,6 +459,55 @@ public class LoadGeneratorModule {
 				duration);
 	}
 
+	public LoadGenerator buildRandomImpulseLoadGenerator(
+			Logger logger,
+			TypeCoercer coercer,
+			@Symbol(IterSymbolsNames.TRACEGENERATOR_URL) String traceGeneratorWebService,
+
+			@CLIOption(longName = "jmeter-clients-URL") String jmeterClientsURL,
+			@CLIOption(longName = "service-manifest-URL") String manifestURL,
+			@Symbol(IterSymbolsNames.N_BINS) int nBins,
+
+			@Symbol(ImpulseLoadGenerator.INTENSITY_LB) double intensityLB,
+			@Symbol(ImpulseLoadGenerator.INTENSITY_UB) double intensityUB,
+			@Symbol(ImpulseLoadGenerator.WHEN) int when,
+			@Symbol(ImpulseLoadGenerator.IMPULSE_DURATION_LB) int impulseDurationLB,
+			@Symbol(ImpulseLoadGenerator.IMPULSE_DURATION_UB) int impulseDurationUB,
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
+		InputSampler randomSampler = new RandomInputSampler();
+
+		return new ImpulseLoadGenerator(logger,
+				"RandomImpulseLoadGenerator", coercer,
+				traceGeneratorWebService, jmeterClientsURL, manifestURL,
+				intensityLB, intensityUB, when, impulseDurationLB,
+				impulseDurationUB, nBins, randomSampler, duration);
+	}
+
+	public LoadGenerator buildLHSImpulseLoadGenerator(
+			Logger logger,
+			TypeCoercer coercer,
+			@Symbol(IterSymbolsNames.TRACEGENERATOR_URL) String traceGeneratorWebService,
+
+			@CLIOption(longName = "jmeter-clients-URL") String jmeterClientsURL,
+			@CLIOption(longName = "service-manifest-URL") String manifestURL,
+			@Symbol(IterSymbolsNames.N_BINS) int nBins,
+
+			@Symbol(ImpulseLoadGenerator.INTENSITY_LB) double intensityLB,
+			@Symbol(ImpulseLoadGenerator.INTENSITY_UB) double intensityUB,
+			@Symbol(ImpulseLoadGenerator.WHEN) int when,
+			@Symbol(ImpulseLoadGenerator.IMPULSE_DURATION_LB) int impulseDurationLB,
+			@Symbol(ImpulseLoadGenerator.IMPULSE_DURATION_UB) int impulseDurationUB,
+
+			@Symbol(LoadGeneratorModule.DURATION_IN_SEC) int duration) {
+
+		InputSampler lhsSampler = new LatinHypercubeInputSampler(logger);
+
+		return new RampLoadGenerator(logger, "LHSImpulseLoadGenerator",
+				coercer, traceGeneratorWebService, jmeterClientsURL,
+				manifestURL, intensityLB, intensityUB, when, impulseDurationLB,
+				impulseDurationUB, nBins, lhsSampler, duration);
+	}
+
 	@Contribute(LoadGeneratorSource.class)
 	public static void addLoadGenerators(
 			TypeCoercer coercer,
@@ -481,6 +531,9 @@ public class LoadGeneratorModule {
 
 			@InjectService("RandomRampLoadGenerator") LoadGenerator randomRamp,
 			@InjectService("LHSRampLoadGenerator") LoadGenerator lhsRamp,
+
+			@InjectService("RandomImpulseLoadGenerator") LoadGenerator randomImpulse,
+			@InjectService("LHSImpulseLoadGenerator") LoadGenerator lhsImpulse,
 
 			MappedConfiguration<String, LoadGenerator> configuration) {
 
@@ -511,6 +564,10 @@ public class LoadGeneratorModule {
 		configuration.add("ramp", randomRamp);
 		configuration.add("ramp-rand", randomRamp);
 		configuration.add("ramp-lhs", lhsRamp);
+
+		configuration.add("impulse", randomImpulse);
+		configuration.add("impulse-rand", randomImpulse);
+		configuration.add("impulse-lhs", lhsImpulse);
 
 	}
 }

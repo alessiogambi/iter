@@ -58,8 +58,10 @@ public class Main {
 			iter.start();
 		} catch (ParseException e) {
 			// Ignore this
+			e.printStackTrace();
 		} catch (ValidationException e) {
 			// Ignore this
+			e.printStackTrace();
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}

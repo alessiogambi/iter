@@ -83,9 +83,11 @@ public class StepLoadGenerator implements LoadGenerator {
 			// THIS IS BAD!
 			String serviceID,//
 			TypeCoercer coercer, String traceGeneratorWebService,
-			String jmeterTestFile, String manifest, double minLB, double minUB,
-			double maxLB, double maxUB, int whenInSecs, int nBins,
-			InputSampler inputSampler, int duration) {
+			String jmeterTestFile, String manifest, //
+			double minLB, double minUB,//
+			double maxLB, double maxUB, //
+			int whenInSecs, //
+			int nBins, InputSampler inputSampler, int duration) {
 
 		this.logger = logger;
 		this.jmeterTestFile = jmeterTestFile;
@@ -115,6 +117,7 @@ public class StepLoadGenerator implements LoadGenerator {
 	// This generates an initial test suite according to the test suite
 	// generator configured, which is an InputSampler
 	public List<Test> generateInitialTestSuite(int testSuiteSize) {
+		System.out.println("StepLoadGenerator.generateInitialTestSuite()");
 		List<Test> initialTestSuite = new ArrayList<Test>();
 		for (Number[] parameters : inputSampler.sample(testSuiteSize,
 				getLowerBounds(), getUpperBounds())) {

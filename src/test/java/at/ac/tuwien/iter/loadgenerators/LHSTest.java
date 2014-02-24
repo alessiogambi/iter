@@ -17,7 +17,7 @@ public class LHSTest {
 		int nSamples = 10;
 
 		List<Number[]> samples = lhs.sample(nSamples,
-				new double[] { 0.0, 0.0 }, new double[] { 0.0, 100.0 });
+				new double[] { 0.0, 0.0 }, new double[] { 0.0, 400.0 });
 
 		for (Number[] sample : samples) {
 			for (int i = 0; i < sample.length; i++) {
